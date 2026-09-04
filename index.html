@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Colegio · Proyecto Web</title>
+  <title>Complejo Educativo · 10 de Octubre 1987</title>
   
   <!-- Foundation CSS -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.8.1/css/foundation.min.css">
@@ -11,13 +11,13 @@
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800;900&family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
   
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   
   <style>
-    /* ===== PALETA DE COLORES (OBLIGATORIA) ===== */
+    /* ===== PALETA DE COLORES ===== */
     :root {
       --azul-marino: #1A365D;
       --azul-institucional: #2B6CB0;
@@ -26,19 +26,15 @@
       --gris-claro: #f5f7fa;
     }
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    
     body {
       font-family: 'Open Sans', sans-serif;
       background-color: var(--blanco);
       color: var(--azul-marino);
       line-height: 1.7;
     }
-
+    
     h1, h2, h3, h4, h5, h6 {
       font-family: 'Montserrat', sans-serif;
       font-weight: 800;
@@ -47,146 +43,87 @@
 
     /* ===== NAVEGACIÓN ===== */
     .top-bar {
-      background: linear-gradient(135deg, var(--azul-marino) 0%, var(--azul-institucional) 100%);
-      padding: 0.8rem 2rem;
-      box-shadow: 0 4px 20px rgba(26, 54, 93, 0.2);
-      border-bottom: 3px solid var(--dorado-accent);
+      background: var(--azul-marino) !important;
+      border-bottom: 3px solid var(--dorado-accent) !important;
+      padding: 0.5rem 1.5rem !important;
     }
-
+    
     .top-bar .menu a {
-      color: var(--azul-marino);
-      font-weight: 600;
-      font-size: 0.95rem;
-      padding: 0.7rem 1.5rem;
-      border-radius: 30px;
-      transition: all 0.3s;
-      letter-spacing: 0.5px;
-      position: relative;
+      color: var(--blanco) !important;
+      font-weight: 600 !important;
+      font-size: 0.9rem !important;
+      padding: 0.6rem 1.2rem !important;
+      border-radius: 30px !important;
+      transition: all 0.3s !important;
     }
-
-    .top-bar .menu a::after {
-      content: '';
-      position: absolute;
-      bottom: 5px;
-      left: 50%;
-      width: 0;
-      height: 2px;
-      background: var(--dorado-accent);
-      transition: all 0.3s;
-      transform: translateX(-50%);
-    }
-
-    .top-bar .menu a:hover::after {
-      width: 60%;
-    }
-
+    
     .top-bar .menu a:hover {
-      color: var(--dorado-accent);
-      background: rgba(214, 158, 46, 0.1);
-      transform: translateY(-2px);
+      background: var(--dorado-accent) !important;
+      color: var(--azul-marino) !important;
     }
-
+    
     .top-bar .menu .active a {
-      background: var(--dorado-accent);
-      color: var(--azul-marino);
-      border-radius: 30px;
-      box-shadow: 0 4px 15px rgba(214, 158, 46, 0.3);
+      background: var(--dorado-accent) !important;
+      color: var(--azul-marino) !important;
+      border-radius: 30px !important;
     }
-
-    .top-bar .menu .active a::after {
-      display: none;
+    
+    /* Submenús */
+    .dropdown.menu .is-dropdown-submenu {
+      background: var(--azul-marino) !important;
+      border: 1px solid var(--dorado-accent) !important;
+      border-radius: 12px !important;
+      padding: 0.5rem 0 !important;
+      min-width: 200px !important;
+    }
+    
+    .dropdown.menu .is-dropdown-submenu a {
+      color: var(--blanco) !important;
+      padding: 0.5rem 1.5rem !important;
+      font-size: 0.85rem !important;
+    }
+    
+    .dropdown.menu .is-dropdown-submenu a:hover {
+      background: var(--dorado-accent) !important;
+      color: var(--azul-marino) !important;
     }
 
     .logo-colegio {
-      font-family: 'Montserrat', sans-serif;
-      font-weight: 900;
-      color: var(--blanco);
-      font-size: 1.6rem;
-      letter-spacing: -0.5px;
+      display: flex;
+      align-items: center;
+      gap: 15px;
     }
-    .logo-colegio span {
-      color: var(--dorado-accent);
-      background: rgba(214, 158, 46, 0.15);
-      padding: 0 8px;
-      border-radius: 8px;
-    }
-    .logo-colegio i {
-      color: var(--dorado-accent);
-      margin-right: 10px;
-      font-size: 1.8rem;
-    }
-
-    /* ===== HERO ===== */
-    .hero-banner {
-      background: linear-gradient(135deg, var(--azul-marino) 0%, var(--azul-institucional) 100%);
-      padding: 5rem 1.5rem 6rem;
-      color: var(--blanco);
-      border-bottom: 5px solid var(--dorado-accent);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .hero-banner::before {
-      content: '';
-      position: absolute;
-      right: -10%;
-      top: -20%;
-      width: 500px;
-      height: 500px;
-      background: var(--dorado-accent);
+    
+    .logo-colegio img {
+      height: 55px;
+      width: 55px;
+      object-fit: cover;
       border-radius: 50%;
-      opacity: 0.05;
+      border: 3px solid var(--dorado-accent);
     }
+    
+    .logo-colegio .nombre-institucion { display: flex; flex-direction: column; line-height: 1.1; }
+    .logo-colegio .nombre-institucion .principal { font-size: 1.1rem; font-weight: 700; color: var(--blanco); }
+    .logo-colegio .nombre-institucion .secundario { font-size: 1.4rem; font-weight: 800; color: var(--dorado-accent); }
 
-    .hero-banner::after {
-      content: '';
-      position: absolute;
-      left: -5%;
-      bottom: -10%;
-      width: 300px;
-      height: 300px;
-      background: var(--azul-institucional);
-      border-radius: 50%;
-      opacity: 0.1;
-    }
-
-    .hero-banner h1 {
-      color: var(--blanco);
-      font-size: 3.5rem;
-      font-weight: 900;
-      text-shadow: 0 4px 20px rgba(0,0,0,0.2);
-      position: relative;
-      z-index: 1;
-    }
-    .hero-banner h1 .highlight {
-      color: var(--dorado-accent);
-      position: relative;
-    }
-    .hero-banner h1 .highlight::after {
-      content: '';
-      position: absolute;
-      bottom: -5px;
-      left: 0;
-      width: 100%;
-      height: 4px;
-      background: var(--dorado-accent);
-      border-radius: 2px;
-    }
-
-    .hero-banner .propuesta {
-      font-size: 1.4rem;
-      font-weight: 300;
-      opacity: 0.95;
-      max-width: 700px;
-      margin: 1rem auto 2rem;
-      position: relative;
-      z-index: 1;
-      line-height: 1.8;
-    }
+    /* ===== SECCIONES ===== */
+    .seccion { padding: 4rem 0; }
+    .seccion-titulo { text-align: center; margin-bottom: 3rem; }
+    .seccion-titulo .etiqueta { color: var(--azul-institucional); font-weight: 700; text-transform: uppercase; letter-spacing: 3px; font-size: 0.85rem; }
+    .seccion-titulo h2 { font-size: 2.8rem; font-weight: 800; margin-top: 0.5rem; }
+    .seccion-titulo .descripcion { color: #4A5568; font-size: 1.1rem; max-width: 700px; margin: 0.5rem auto 0; }
+    
+    .bg-gris { background: var(--gris-claro); }
+    .bg-blanco { background: var(--blanco); }
+    .bg-azul-marino { background: var(--azul-marino); color: var(--blanco); }
+    .bg-azul-marino h2 { color: var(--blanco); }
+    
+    .text-dorado { color: var(--dorado-accent); }
+    .border-dorado { border-bottom: 4px solid var(--dorado-accent); display: inline-block; padding-bottom: 8px; }
 
     /* ===== BOTONES ===== */
     .btn-dorado {
-      background: linear-gradient(135deg, var(--dorado-accent) 0%, #c48a1e 100%);
+      background: var(--dorado-accent);
       color: var(--azul-marino);
       font-weight: 700;
       border-radius: 50px;
@@ -194,20 +131,13 @@
       transition: all 0.3s;
       border: none;
       font-family: 'Montserrat', sans-serif;
-      box-shadow: 0 8px 30px rgba(214, 158, 46, 0.4);
       display: inline-block;
       font-size: 1.05rem;
-      position: relative;
-      z-index: 1;
     }
-    .btn-dorado:hover {
-      transform: translateY(-5px) scale(1.02);
-      box-shadow: 0 15px 45px rgba(214, 158, 46, 0.5);
-      color: var(--azul-marino);
-    }
-
+    .btn-dorado:hover { background: #c48a1e; transform: translateY(-3px); }
+    
     .btn-azul {
-      background: linear-gradient(135deg, var(--azul-institucional) 0%, var(--azul-marino) 100%);
+      background: var(--azul-institucional);
       color: var(--blanco);
       font-weight: 700;
       border-radius: 50px;
@@ -215,653 +145,40 @@
       transition: all 0.3s;
       border: none;
       font-family: 'Montserrat', sans-serif;
-      box-shadow: 0 8px 30px rgba(43, 108, 176, 0.3);
       display: inline-block;
       font-size: 1.05rem;
-      position: relative;
-      z-index: 1;
     }
-    .btn-azul:hover {
-      transform: translateY(-5px) scale(1.02);
-      box-shadow: 0 15px 45px rgba(43, 108, 176, 0.4);
-      color: var(--blanco);
-    }
+    .btn-azul:hover { background: var(--azul-marino); transform: translateY(-3px); }
 
-    /* ===== IMÁGENES ===== */
-    .image-section {
-      padding: 2.5rem 0 1.5rem;
-      background: var(--blanco);
-    }
-
-    .image-section .img-placeholder {
-      width: 100%;
-      border-radius: 20px;
-      box-shadow: 0 18px 45px rgba(26, 54, 93, 0.10);
-      border: 4px solid var(--dorado-accent);
-      transition: all 0.3s;
-      min-height: 280px;
-      max-height: 420px;
-      object-fit: cover;
-    }
-    .image-section .img-placeholder:hover {
-      transform: scale(1.01);
-      box-shadow: 0 25px 60px rgba(43, 108, 176, 0.12);
-    }
-
-    .video-card {
-      background: var(--blanco);
-      border: 2px solid rgba(43, 108, 176, 0.08);
-      border-radius: 20px;
-      box-shadow: 0 18px 40px rgba(26, 54, 93, 0.08);
-      padding: 0.75rem;
-      height: 100%;
-    }
-
-    .video-wrapper {
-      position: relative;
-      width: 100%;
-      padding-top: 56.25%;
-      border-radius: 18px;
-      overflow: hidden;
-      background: #e9eef7;
-    }
-
-    .video-wrapper iframe {
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      border: none;
-    }
-
-    /* ===== PORTAL CARDS ===== */
+    /* ===== CARDS ===== */
     .portal-card {
+      text-align: center;
+      padding: 2rem 1.5rem;
       background: var(--blanco);
       border-radius: 20px;
-      padding: 2rem 1.5rem;
-      box-shadow: 0 8px 30px rgba(26, 54, 93, 0.06);
+      box-shadow: 0 8px 30px rgba(26,54,93,0.06);
       transition: all 0.3s;
       height: 100%;
-      border: 1px solid rgba(43, 108, 176, 0.06);
-      text-align: center;
+      border: 1px solid rgba(43,108,176,0.06);
     }
-    .portal-card:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 20px 60px rgba(43, 108, 176, 0.12);
-      border-color: var(--dorado-accent);
-    }
+    .portal-card:hover { transform: translateY(-10px); box-shadow: 0 20px 60px rgba(43,108,176,0.12); border-color: var(--dorado-accent); }
     .portal-card .icon-wrapper {
-      width: 90px;
-      height: 90px;
+      width: 80px;
+      height: 80px;
       border-radius: 50%;
-      background: linear-gradient(135deg, var(--azul-institucional) 0%, var(--azul-marino) 100%);
+      background: var(--azul-institucional);
       display: flex;
       align-items: center;
       justify-content: center;
       margin: 0 auto 1.2rem;
-      box-shadow: 0 8px 25px rgba(43, 108, 176, 0.2);
     }
-    .portal-card .icon-wrapper i {
-      color: var(--blanco);
-      font-size: 2.5rem;
-    }
-    .portal-card .icon-wrapper.dorado {
-      background: linear-gradient(135deg, var(--dorado-accent) 0%, #c48a1e 100%);
-      box-shadow: 0 8px 25px rgba(214, 158, 46, 0.3);
-    }
-    .portal-card h4 {
-      color: var(--azul-marino);
-      font-weight: 700;
-    }
-    .portal-card p {
-      color: #4A5568;
-      font-size: 0.95rem;
-    }
-    .portal-card .portal-img {
-      width: 100%;
-      height: 120px;
-      object-fit: cover;
-      border-radius: 12px;
-      margin-top: 1rem;
-      border: 2px solid var(--azul-institucional);
-    }
-
-    /* ===== NOSOTROS ===== */
-    .seccion-nosotros {
-      background: var(--gris-claro);
-      padding: 4rem 0;
-    }
-
-    .seccion-nosotros .img-nosotros {
-      width: 100%;
-      border-radius: 25px;
-      box-shadow: 0 20px 60px rgba(26, 54, 93, 0.1);
-      border: 4px solid var(--dorado-accent);
-      min-height: 400px;
-      object-fit: cover;
-    }
-
-    .valores-badge {
-      background: var(--blanco);
-      padding: 0.8rem 1.5rem;
-      border-radius: 60px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.03);
-      border-left: 5px solid var(--dorado-accent);
-      margin: 6px 0;
-      font-weight: 600;
-      color: var(--azul-marino);
-      display: inline-block;
-    }
-
-    /* =========================================================
-   HISTORIA DEL COMPLEJO EDUCATIVO "10 DE OCTUBRE"
-   SISTEMA DE DISEÑO INSTITUCIONAL
-   ========================================================= */
-
-.historia {
-    position: relative;
-    width: 100%;
-    padding: 80px 20px;
-
-    /* Fondo azul muy suave y transparente */
-    background: linear-gradient(
-        135deg,
-        rgba(235, 244, 255, 0.95),
-        rgba(255, 255, 255, 0.98)
-    );
-
-    overflow: hidden;
-}
-
-
-/* Decoración superior */
-
-.historia::before {
-    content: "";
-    position: absolute;
-
-    top: 0;
-    left: 0;
-
-    width: 100%;
-    height: 7px;
-
-    background: linear-gradient(
-        90deg,
-        #1A365D,
-        #2B6CB0,
-        #D69E2E,
-        #2B6CB0,
-        #1A365D
-    );
-}
-
-
-/* =========================================================
-   ENCABEZADO
-   ========================================================= */
-
-.historia-titulo {
-    position: relative;
-    z-index: 2;
-
-    max-width: 900px;
-    margin: 0 auto 60px;
-
-    text-align: center;
-}
-
-
-/* Pequeña etiqueta */
-
-.historia-titulo span {
-    display: inline-block;
-
-    padding: 7px 18px;
-    margin-bottom: 15px;
-
-    background: rgba(43, 108, 176, 0.10);
-
-    border: 1px solid rgba(43, 108, 176, 0.25);
-
-    border-radius: 30px;
-
-    color: #2B6CB0;
-
-    font-size: 13px;
-    font-weight: 700;
-
-    letter-spacing: 1.5px;
-}
-
-
-/* Título principal */
-
-.historia-titulo h2 {
-    margin: 0;
-
-    color: #1A365D;
-
-    font-family: "Montserrat", "Inter", sans-serif;
-
-    font-size: 38px;
-    font-weight: 800;
-
-    line-height: 1.25;
-}
-
-
-/* Línea dorada */
-
-.historia-titulo h2::after {
-    content: "";
-
-    display: block;
-
-    width: 70px;
-    height: 4px;
-
-    margin: 18px auto;
-
-    background: #D69E2E;
-
-    border-radius: 5px;
-}
-
-
-/* Descripción */
-
-.historia-titulo p {
-    max-width: 700px;
-
-    margin: 0 auto;
-
-    color: #4A5568;
-
-    font-family: "Open Sans", "Roboto", sans-serif;
-
-    font-size: 16px;
-
-    line-height: 1.7;
-}
-
-
-/* =========================================================
-   CONTENEDOR DE LA HISTORIA
-   ========================================================= */
-
-.historia-contenedor {
-    position: relative;
-
-    max-width: 1000px;
-
-    margin: 0 auto;
-
-    z-index: 2;
-}
-
-
-/* Línea vertical */
-
-.historia-contenedor::before {
-    content: "";
-
-    position: absolute;
-
-    left: 38px;
-
-    top: 35px;
-    bottom: 35px;
-
-    width: 3px;
-
-    background: #2B6CB0;
-
-    opacity: 0.30;
-
-    border-radius: 10px;
-}
-
-
-/* =========================================================
-   CADA ELEMENTO DE LA HISTORIA
-   ========================================================= */
-
-.historia-item {
-    position: relative;
-
-    display: flex;
-
-    align-items: flex-start;
-
-    gap: 25px;
-
-    margin-bottom: 32px;
-}
-
-
-/* =========================================================
-   NÚMEROS
-   ========================================================= */
-
-.historia-numero {
-    position: relative;
-
-    z-index: 3;
-
-    flex-shrink: 0;
-
-    width: 76px;
-    height: 76px;
-
-    display: flex;
-
-    align-items: center;
-    justify-content: center;
-
-    border-radius: 50%;
-
-    background: #1A365D;
-
-    border: 5px solid #FFFFFF;
-
-    color: #FFFFFF;
-
-    font-family: "Montserrat", sans-serif;
-
-    font-size: 17px;
-
-    font-weight: 800;
-
-    box-shadow:
-        0 4px 15px rgba(26, 54, 93, 0.20);
-}
-
-
-/* =========================================================
-   TARJETAS
-   ========================================================= */
-
-.historia-contenido {
-    flex: 1;
-
-    display: flex;
-
-    align-items: flex-start;
-
-    gap: 22px;
-
-    padding: 28px 30px;
-
-    /* Blanco ligeramente transparente */
-
-    background: rgba(255, 255, 255, 0.78);
-
-    border: 1px solid rgba(43, 108, 176, 0.16);
-
-    border-left: 5px solid #2B6CB0;
-
-    border-radius: 12px;
-
-    box-shadow:
-        0 5px 20px rgba(26, 54, 93, 0.08);
-
-    backdrop-filter: blur(8px);
-
-    transition: all 0.3s ease;
-}
-
-
-/* Al pasar el cursor */
-
-.historia-contenido:hover {
-    transform: translateY(-3px);
-
-    border-left-color: #D69E2E;
-
-    box-shadow:
-        0 10px 28px rgba(26, 54, 93, 0.13);
-}
-
-
-/* =========================================================
-   ICONOS
-   ========================================================= */
-
-.historia-icono {
-    flex-shrink: 0;
-
-    width: 58px;
-    height: 58px;
-
-    display: flex;
-
-    align-items: center;
-    justify-content: center;
-
-    background: rgba(43, 108, 176, 0.10);
-
-    border-radius: 10px;
-
-    border: 1px solid rgba(43, 108, 176, 0.15);
-
-    font-size: 26px;
-}
-
-
-/* =========================================================
-   TEXTO
-   ========================================================= */
-
-.historia-texto {
-    flex: 1;
-}
-
-
-/* Fecha */
-
-.historia-fecha {
-    display: block;
-
-    margin-bottom: 6px;
-
-    color: #2B6CB0;
-
-    font-family: "Montserrat", sans-serif;
-
-    font-size: 12px;
-
-    font-weight: 700;
-
-    text-transform: uppercase;
-
-    letter-spacing: 1px;
-}
-
-
-/* Título */
-
-.historia-texto h3 {
-    margin: 0 0 13px;
-
-    color: #1A365D;
-
-    font-family: "Montserrat", "Inter", sans-serif;
-
-    font-size: 22px;
-
-    font-weight: 700;
-
-    line-height: 1.3;
-}
-
-
-/* Texto */
-
-.historia-texto p {
-    margin: 0;
-
-    color: #374151;
-
-    font-family: "Open Sans", "Roboto", sans-serif;
-
-    font-size: 16px;
-
-    line-height: 1.8;
-
-    text-align: justify;
-}
-
-
-/* =========================================================
-   DETALLE DORADO
-   ========================================================= */
-
-.historia-item:last-child .historia-contenido {
-    border-left-color: #D69E2E;
-}
-
-.historia-item:last-child .historia-numero {
-    background: #D69E2E;
-}
-
-
-/* =========================================================
-   TABLETS
-   ========================================================= */
-
-@media (max-width: 768px) {
-
-    .historia {
-        padding: 65px 18px;
-    }
-
-    .historia-titulo h2 {
-        font-size: 32px;
-    }
-
-    .historia-contenedor::before {
-        left: 31px;
-    }
-
-    .historia-item {
-        gap: 18px;
-    }
-
-    .historia-numero {
-        width: 62px;
-        height: 62px;
-
-        font-size: 14px;
-    }
-
-    .historia-contenido {
-        padding: 23px;
-    }
-
-    .historia-texto h3 {
-        font-size: 20px;
-    }
-}
-
-
-/* =========================================================
-   CELULARES
-   ========================================================= */
-
-@media (max-width: 550px) {
-
-    .historia {
-        padding: 55px 12px;
-    }
-
-    .historia-titulo {
-        margin-bottom: 40px;
-    }
-
-    .historia-titulo h2 {
-        font-size: 27px;
-    }
-
-    .historia-titulo p {
-        font-size: 15px;
-    }
-
-    .historia-contenedor::before {
-        left: 24px;
-    }
-
-    .historia-item {
-        gap: 12px;
-        margin-bottom: 22px;
-    }
-
-    .historia-numero {
-        width: 48px;
-        height: 48px;
-
-        border-width: 3px;
-
-        font-size: 12px;
-    }
-
-    .historia-contenido {
-        display: block;
-
-        padding: 20px;
-
-        border-left-width: 4px;
-    }
-
-    .historia-icono {
-        width: 45px;
-        height: 45px;
-
-        margin-bottom: 14px;
-
-        font-size: 21px;
-    }
-
-    .historia-fecha {
-        font-size: 10px;
-    }
-
-    .historia-texto h3 {
-        font-size: 18px;
-    }
-
-    .historia-texto p {
-        font-size: 14px;
-
-        line-height: 1.7;
-
-        text-align: left;
-    }
-}
-    /* ===== ADMISIONES ===== */
-    .seccion-admisiones {
-      background: linear-gradient(135deg, var(--azul-marino) 0%, var(--azul-institucional) 100%);
-      padding: 4rem 0;
-      color: var(--blanco);
-    }
-
-    .seccion-admisiones h2 {
-      color: var(--blanco);
-    }
-    .seccion-admisiones .subtitle {
-      color: var(--dorado-accent);
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 3px;
-    }
-
-    .seccion-admisiones .img-admisiones {
-      width: 100%;
-      border-radius: 20px;
-      border: 3px solid var(--dorado-accent);
-      min-height: 200px;
-      object-fit: cover;
-    }
+    .portal-card .icon-wrapper.dorado { background: var(--dorado-accent); }
+    .portal-card .icon-wrapper i { color: var(--blanco); font-size: 2rem; }
+    .portal-card h4 { font-weight: 700; color: var(--azul-marino); }
+    .portal-card p { color: #4A5568; font-size: 0.95rem; }
+
+    .video-wrapper { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; }
+    .video-wrapper iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; }
 
     .formulario-inscripcion input,
     .formulario-inscripcion select,
@@ -872,166 +189,42 @@
       font-family: 'Open Sans', sans-serif;
       width: 100%;
       margin-bottom: 1rem;
-      transition: all 0.3s;
     }
-    .formulario-inscripcion input:focus,
-    .formulario-inscripcion textarea:focus {
-      border-color: var(--dorado-accent);
-      box-shadow: 0 0 0 4px rgba(214, 158, 46, 0.1);
-    }
-    .formulario-inscripcion label {
-      font-weight: 600;
-      color: var(--azul-marino);
-    }
+    .formulario-inscripcion label { font-weight: 600; color: var(--azul-marino); }
 
-    .process-list {
-      list-style: none;
-      padding: 0;
-    }
-    .process-list li {
-      margin-bottom: 1rem;
-      display: flex;
-      align-items: center;
-      color: var(--blanco);
-      font-size: 1.05rem;
-    }
-    .process-list li .step-number {
-      display: inline-block;
-      width: 40px;
-      height: 40px;
-      background: var(--dorado-accent);
-      border-radius: 50%;
-      text-align: center;
-      line-height: 40px;
-      margin-right: 1rem;
-      font-weight: 800;
-      color: var(--azul-marino);
-      flex-shrink: 0;
-    }
-
-    /* ===== UBICACIÓN CON GOOGLE MAPS ===== */
-    .seccion-ubicacion {
-      padding: 4rem 0;
-      background: var(--blanco);
-    }
-
-    .seccion-ubicacion .mapa-container {
-      width: 100%;
-      height: 450px;
-      border-radius: 25px;
-      overflow: hidden;
-      box-shadow: 0 20px 60px rgba(26, 54, 93, 0.1);
-      border: 4px solid var(--dorado-accent);
-    }
-
-    .seccion-ubicacion .mapa-container iframe {
-      width: 100%;
-      height: 100%;
-      border: none;
-    }
-
-    .seccion-ubicacion .ubicacion-info {
-      background: var(--gris-claro);
-      padding: 2rem;
-      border-radius: 20px;
-      border-left: 5px solid var(--dorado-accent);
-      height: 100%;
-    }
-
-    .seccion-ubicacion .ubicacion-info i {
-      color: var(--dorado-accent);
-      font-size: 1.8rem;
-      margin-right: 1rem;
-    }
-
-    .seccion-ubicacion .ubicacion-info h4 {
-      font-weight: 700;
-      color: var(--azul-marino);
-      margin-bottom: 0.5rem;
-    }
-
-    .seccion-ubicacion .ubicacion-info p {
-      color: #4A5568;
-      font-size: 1rem;
-      margin-bottom: 0.5rem;
-    }
-
-    .seccion-ubicacion .ubicacion-info .horario {
-      background: var(--blanco);
-      padding: 1rem;
-      border-radius: 15px;
-      margin-top: 1rem;
-      border: 1px solid #e2e8f0;
-    }
-
-    /* ===== CONTACTO ===== */
-    .seccion-contacto {
-      padding: 4rem 0;
-      background: var(--gris-claro);
-    }
+    .process-list { list-style: none; padding: 0; }
+    .process-list li { margin-bottom: 1rem; display: flex; align-items: center; color: var(--blanco); font-size: 1.05rem; }
+    .process-list li .step-number { display: inline-block; width: 40px; height: 40px; background: var(--dorado-accent); border-radius: 50%; text-align: center; line-height: 40px; margin-right: 1rem; font-weight: 800; color: var(--azul-marino); flex-shrink: 0; }
 
     .contact-card {
       background: var(--blanco);
       padding: 2rem;
       border-radius: 20px;
-      box-shadow: 0 8px 30px rgba(26, 54, 93, 0.04);
+      box-shadow: 0 8px 30px rgba(26,54,93,0.04);
       transition: all 0.3s;
       height: 100%;
-      border: 1px solid rgba(43, 108, 176, 0.04);
       text-align: center;
+      border: 1px solid rgba(43,108,176,0.04);
     }
-    .contact-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 20px 50px rgba(43, 108, 176, 0.08);
-      border-color: var(--dorado-accent);
-    }
-    .contact-card i {
-      font-size: 2.8rem;
-      margin-bottom: 1rem;
-    }
-    .contact-card i.azul {
-      color: var(--azul-institucional);
-    }
-    .contact-card i.dorado {
-      color: var(--dorado-accent);
-    }
-    .contact-card h5 {
-      font-weight: 700;
-      color: var(--azul-marino);
-    }
-    .contact-card p {
-      color: #4A5568;
-      font-size: 0.95rem;
-    }
+    .contact-card:hover { transform: translateY(-5px); box-shadow: 0 20px 50px rgba(43,108,176,0.08); border-color: var(--dorado-accent); }
+    .contact-card i { font-size: 2.8rem; margin-bottom: 1rem; }
+    .contact-card i.azul { color: var(--azul-institucional); }
+    .contact-card i.dorado { color: var(--dorado-accent); }
+    .contact-card h5 { font-weight: 700; color: var(--azul-marino); }
+    .contact-card p { color: #4A5568; font-size: 0.95rem; }
 
-    /* ===== FOOTER ===== */
     .footer-colegio {
       background: var(--azul-marino);
       color: rgba(255,255,255,0.85);
       padding: 3rem 0;
       border-top: 5px solid var(--dorado-accent);
     }
-    .footer-colegio h5 {
-      color: var(--blanco);
-      font-weight: 700;
-    }
-    .footer-colegio h5 span {
-      color: var(--dorado-accent);
-    }
-    .footer-colegio a {
-      color: rgba(255,255,255,0.7);
-      transition: all 0.3s;
-    }
-    .footer-colegio a:hover {
-      color: var(--dorado-accent);
-    }
-    .footer-colegio ul {
-      list-style: none;
-      padding: 0;
-    }
-    .footer-colegio ul li {
-      margin-bottom: 0.5rem;
-    }
+    .footer-colegio h5 { color: var(--blanco); font-weight: 700; }
+    .footer-colegio h5 span { color: var(--dorado-accent); }
+    .footer-colegio a { color: rgba(255,255,255,0.7); transition: all 0.3s; }
+    .footer-colegio a:hover { color: var(--dorado-accent); }
+    .footer-colegio ul { list-style: none; padding: 0; }
+    .footer-colegio ul li { margin-bottom: 0.5rem; }
 
     .social-icons a {
       display: inline-block;
@@ -1044,1413 +237,1142 @@
       margin-right: 0.5rem;
       transition: all 0.3s;
       color: var(--blanco);
-      border: 1px solid rgba(255,255,255,0.05);
     }
-    .social-icons a:hover {
-      background: var(--dorado-accent);
-      color: var(--azul-marino);
-      transform: translateY(-5px);
-      box-shadow: 0 8px 25px rgba(214, 158, 46, 0.3);
-    }
+    .social-icons a:hover { background: var(--dorado-accent); color: var(--azul-marino); transform: translateY(-5px); }
 
-    /* ===== RESPONSIVE ===== */
-    @media screen and (max-width: 640px) {
-      .hero-banner h1 {
-        font-size: 2.2rem;
-      }
-      .hero-banner .propuesta {
-        font-size: 1.1rem;
-      }
-      .top-bar {
-        padding: 0.5rem 1rem;
-      }
-      .top-bar .menu a {
-        padding: 0.5rem 1rem;
-        font-size: 0.85rem;
-      }
-      .image-section .img-placeholder {
-        min-height: 200px;
-      }
-      .seccion-nosotros .img-nosotros {
-        min-height: 250px;
-      }
-      .seccion-ubicacion .mapa-container {
-        height: 300px;
-      }
-      .btn-dorado, .btn-azul {
-        padding: 0.8rem 2rem;
-        font-size: 0.95rem;
-      }
-    }
+    /* =====================================================
+   MENÚ PRINCIPAL
+   ===================================================== */
 
-    /* ===== UTILIDADES ===== */
-    .text-dorado { color: var(--dorado-accent); }
-    .text-azul-institucional { color: var(--azul-institucional); }
-    .text-azul-marino { color: var(--azul-marino); }
-    .border-dorado { border-bottom: 4px solid var(--dorado-accent); display: inline-block; padding-bottom: 8px; }
-    .mb-2 { margin-bottom: 2rem; }
-    .mb-3 { margin-bottom: 3rem; }
-    .mt-2 { margin-top: 2rem; }
-    .mt-3 { margin-top: 3rem; }
+.navegacion-principal {
+  width: 100%;
+  background: var(--azul-marino);
 
-    /* =========================================================
-   PROYECTOS PEDAGÓGICOS
-   COMPLEJO EDUCATIVO "10 DE OCTUBRE"
-   ========================================================= */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 
-.proyectos-pedagogicos {
-    position: relative;
+  padding: 10px 25px;
+
+  position: relative;
+  z-index: 9999;
+
+  box-shadow: 0 3px 10px rgba(0,0,0,0.20);
+}
+
+
+/* LOGO */
+
+.navegacion-principal .logo-colegio {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  background: transparent;
+}
+
+.navegacion-principal .logo-colegio img {
+  width: 55px;
+  height: 55px;
+
+  border-radius: 50%;
+
+  border: 2px solid var(--dorado-accent);
+}
+
+.navegacion-principal .nombre-institucion {
+  display: flex;
+  flex-direction: column;
+}
+
+.navegacion-principal .principal {
+  color: var(--blanco);
+
+  font-family: 'Montserrat', sans-serif;
+
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.navegacion-principal .secundario {
+  color: var(--dorado-accent);
+
+  font-family: 'Montserrat', sans-serif;
+
+  font-size: 12px;
+  font-weight: 600;
+}
+
+
+/* =====================================================
+   MENÚ
+   ===================================================== */
+
+.menu-principal {
+  display: flex;
+
+  align-items: center;
+
+  list-style: none;
+
+  margin: 0;
+  padding: 0;
+
+  background: transparent;
+}
+
+.menu-principal > li {
+  position: relative;
+
+  list-style: none;
+
+  margin: 0;
+  padding: 0;
+
+  background: transparent;
+}
+
+
+/* =====================================================
+   BOTONES
+   ===================================================== */
+
+.boton-menu,
+.menu-principal > li > a {
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 6px;
+
+  padding: 14px 12px;
+
+  border: none;
+
+  background: transparent !important;
+
+  color: white !important;
+
+  font-family: 'Montserrat', sans-serif;
+
+  font-size: 14px;
+
+  font-weight: 600;
+
+  text-decoration: none;
+
+  cursor: pointer;
+}
+
+.boton-menu:hover,
+.menu-principal > li > a:hover {
+
+  color: var(--dorado-accent) !important;
+
+  background: transparent !important;
+}
+
+
+/* =====================================================
+   FLECHITA
+   ===================================================== */
+
+.flecha {
+
+  font-size: 10px;
+
+  margin-left: 3px;
+
+  color: white;
+
+}
+
+
+/* =====================================================
+   SUBMENÚ OCULTO
+   ===================================================== */
+
+.submenu-oculto {
+
+  display: none;
+
+  position: absolute;
+
+  top: 100%;
+
+  left: 0;
+
+  width: 270px;
+
+  padding: 5px 0;
+
+  margin: 0;
+
+  list-style: none;
+
+  background: var(--azul-marino) !important;
+
+  border: 1px solid var(--dorado-accent);
+
+  border-radius: 8px;
+
+  box-shadow: 0 8px 20px rgba(0,0,0,0.30);
+
+  z-index: 10000;
+}
+
+
+/* =====================================================
+   SUBMENÚ CUANDO ESTÁ ABIERTO
+   ===================================================== */
+
+.tiene-submenu.abierto .submenu-oculto {
+
+  display: block;
+
+}
+
+
+/* =====================================================
+   OPCIONES DEL SUBMENÚ
+   ===================================================== */
+
+.submenu-oculto li {
+
+  display: block;
+
+  width: 100%;
+
+  margin: 0;
+
+  padding: 0;
+
+  list-style: none;
+
+}
+
+
+.submenu-oculto li a {
+
+  display: block;
+
+  width: 100%;
+
+  padding: 12px 15px;
+
+  color: white !important;
+
+  background: transparent !important;
+
+  text-decoration: none;
+
+  font-family: 'Open Sans', sans-serif;
+
+  font-size: 14px;
+
+}
+
+
+/* Cuando pasas el mouse */
+
+.submenu-oculto li a:hover {
+
+  background: var(--dorado-accent) !important;
+
+  color: var(--azul-marino) !important;
+
+}
+
+
+/* =====================================================
+   FLECHA CUANDO ESTÁ ABIERTO
+   ===================================================== */
+
+.tiene-submenu.abierto .flecha {
+
+  transform: rotate(180deg);
+
+}
+
+
+/* =====================================================
+   CELULAR
+   ===================================================== */
+
+@media screen and (max-width: 900px) {
+
+  .navegacion-principal {
+
+    flex-direction: column;
+
+    gap: 10px;
+
+  }
+
+  .menu-principal {
+
+    flex-wrap: wrap;
+
+    justify-content: center;
+
+  }
+
+}
+
+
+@media screen and (max-width: 600px) {
+
+  .menu-principal {
+
+    flex-direction: column;
+
     width: 100%;
-    padding: 80px 20px;
 
-    background: linear-gradient(
-        135deg,
-        rgba(235, 244, 255, 0.96),
-        rgba(255, 255, 255, 0.98)
-    );
+  }
 
+  .menu-principal > li {
+
+    width: 100%;
+
+  }
+
+  .boton-menu,
+  .menu-principal > li > a {
+
+    justify-content: center;
+
+    width: 100%;
+
+  }
+
+  .submenu-oculto {
+
+    position: static;
+
+    width: 100%;
+
+  }
+
+}
+/* ===== SUBMENÚS ===== */
+
+.navegacion-principal {
+    position: relative;
+}
+
+.menu-principal {
+    list-style: none;
+}
+
+.tiene-submenu {
+    position: relative;
+}
+
+.submenu-oculto {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 9999;
+    list-style: none;
+}
+
+/* CUANDO EL MENÚ ESTÁ ABIERTO */
+.tiene-submenu.menu-abierto .submenu-oculto {
+    display: block;
+}
+
+/* BOTÓN DE LOS MENÚS */
+.boton-menu {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font: inherit;
+}
+
+/* FLECHA */
+.flecha {
+    display: inline-block;
+    transition: transform 0.3s ease;
+}
+
+/* GIRAR LA FLECHA */
+.tiene-submenu.menu-abierto .flecha {
+    transform: rotate(180deg);
+}
+
+/* ===== ESPACIOS PARA IMÁGENES ===== */
+.espacio-imagen {
+    background: #eef2f7;
+    border: 3px dashed var(--azul-institucional);
+    border-radius: 16px;
+    padding: 1.5rem;
+    text-align: center;
+    min-height: 180px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    background-size: cover !important;
+    background-position: center !important;
+    position: relative;
+    overflow: hidden;
+}
+.espacio-imagen:hover {
+    border-color: var(--dorado-accent);
+    transform: scale(1.02);
+}
+.espacio-imagen i {
+    font-size: 3rem;
+    color: var(--azul-institucional);
+    margin-bottom: 0.5rem;
+    opacity: 0.5;
+}
+.espacio-imagen p {
+    color: #4A5568;
+    font-size: 0.9rem;
+    margin: 0;
+    font-weight: 600;
+}
+.espacio-imagen .subtitulo-img {
+    font-size: 0.8rem;
+    font-weight: 400;
+    color: #718096;
+}
+
+/* ===== GEN CON FONDO ===== */
+.imagen-con-fondo {
+    background-size: cover !important;
+    background-position: center !important;
+    border: none !important;
+}
+.imagen-con-fondo i,
+.imagen-con-fondo p {
+    display: none !important;
+}
+.imagen-con-fondo .subtitulo-img {
+    background: rgba(0,0,0,0.6);
+    color: white !important;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+}
+
+/* ===== IMAGEN DESTACADA DE HISTORIA ===== */
+.imagen-historia-destacada {
+    background: linear-gradient(135deg, var(--azul-marino), var(--azul-institucional));
+    border-radius: 20px;
+    padding: 2.5rem 2rem;
+    text-align: center;
+    min-height: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 3px solid var(--dorado-accent);
+    box-shadow: 0 8px 30px rgba(26,54,93,0.12);
+    background-size: cover !important;
+    background-position: center !important;
+    position: relative;
     overflow: hidden;
 }
 
-
-/* =========================================================
-   FRANJA SUPERIOR INSTITUCIONAL
-   ========================================================= */
-
-.proyectos-pedagogicos::before {
-    content: "";
+.imagen-historia-destacada .overlay {
     position: absolute;
-
     top: 0;
     left: 0;
-
-    width: 100%;
-    height: 6px;
-
-    background: linear-gradient(
-        90deg,
-        #1A365D,
-        #2B6CB0,
-        #D69E2E,
-        #2B6CB0,
-        #1A365D
-    );
+    right: 0;
+    bottom: 0;
+    background: rgba(26,54,93,0.75);
+    z-index: 0;
 }
 
-
-/* =========================================================
-   DECORACIÓN DEL FONDO
-   ========================================================= */
-
-.proyectos-pedagogicos::after {
-    content: "";
-
-    position: absolute;
-
-    width: 320px;
-    height: 320px;
-
-    right: -140px;
-    bottom: -140px;
-
-    border-radius: 50%;
-
-    background: rgba(43, 108, 176, 0.08);
-
-    filter: blur(5px);
-}
-
-
-/* =========================================================
-   TÍTULO DE LA SECCIÓN
-   ========================================================= */
-
-.proyectos-titulo {
+.imagen-historia-destacada .icono-grande {
+    font-size: 3.5rem;
+    color: var(--dorado-accent);
+    margin-bottom: 0.5rem;
+    opacity: 0.7;
     position: relative;
-    z-index: 2;
-
-    max-width: 850px;
-
-    margin: 0 auto 55px;
-
-    text-align: center;
+    z-index: 1;
 }
 
-
-/* Etiqueta */
-
-.proyectos-titulo span {
-    display: inline-block;
-
-    padding: 7px 18px;
-
-    margin-bottom: 15px;
-
-    color: #2B6CB0;
-
-    background: rgba(43, 108, 176, 0.10);
-
-    border: 1px solid rgba(43, 108, 176, 0.22);
-
-    border-radius: 30px;
-
-    font-family: "Montserrat", "Inter", sans-serif;
-
-    font-size: 12px;
-
+.imagen-historia-destacada .titulo-imagen {
+    color: var(--blanco);
+    font-size: 1.5rem;
     font-weight: 700;
-
-    letter-spacing: 1.5px;
-}
-
-
-/* Título */
-
-.proyectos-titulo h2 {
+    font-family: 'Montserrat', sans-serif;
     margin: 0;
-
-    color: #1A365D;
-
-    font-family: "Montserrat", "Inter", sans-serif;
-
-    font-size: 38px;
-
-    font-weight: 800;
-
-    line-height: 1.25;
+    position: relative;
+    z-index: 1;
 }
 
-
-/* Línea dorada debajo del título */
-
-.proyectos-titulo h2::after {
-    content: "";
-
-    display: block;
-
-    width: 65px;
-    height: 4px;
-
-    margin: 16px auto;
-
-    background: #D69E2E;
-
-    border-radius: 5px;
+.imagen-historia-destacada .subtitulo-imagen {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 1rem;
+    font-weight: 400;
+    margin-top: 0.2rem;
+    position: relative;
+    z-index: 1;
 }
 
+.imagen-historia-destacada .badge-dorado {
+    display: inline-block;
+    background: var(--dorado-accent);
+    color: var(--azul-marino);
+    font-weight: 700;
+    font-size: 0.75rem;
+    padding: 0.3rem 1.5rem;
+    border-radius: 50px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-top: 0.6rem;
+    position: relative;
+    z-index: 1;
+}
 
-/* Descripción */
+/* Responsive para la imagen de historia */
+@media screen and (max-width: 640px) {
+    .imagen-historia-destacada {
+        padding: 1.8rem 1.2rem;
+        min-height: 160px;
+    }
+    .imagen-historia-destacada .titulo-imagen {
+        font-size: 1.1rem;
+    }
+    .imagen-historia-destacada .subtitulo-imagen {
+        font-size: 0.85rem;
+    }
+    .imagen-historia-destacada .icono-grande {
+        font-size: 2.5rem;
+    }
+}
 
-.proyectos-titulo p {
-    max-width: 700px;
+/* ===== LÍNEA DE TIEMPO - UN SOLO LADO ===== */
+.timeline {
+    position: relative;
+    padding: 2rem 0;
+    padding-left: 40px;
+}
 
-    margin: 0 auto;
+/* Línea vertical a la izquierda */
+.timeline::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 12px;
+    width: 4px;
+    height: 100%;
+    background: linear-gradient(to bottom, var(--dorado-accent), var(--azul-institucional), var(--dorado-accent));
+    border-radius: 4px;
+}
 
+/* Cada elemento de la línea de tiempo */
+.timeline-item {
+    position: relative;
+    margin-bottom: 2.2rem;
+    padding-left: 35px;
+}
+
+/* Círculo en la línea */
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -33px;
+    top: 6px;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: var(--dorado-accent);
+    border: 4px solid var(--blanco);
+    box-shadow: 0 0 0 4px var(--dorado-accent);
+    z-index: 2;
+}
+
+/* Alternar colores de los círculos */
+.timeline-item:nth-child(even)::before {
+    background: var(--azul-institucional);
+    box-shadow: 0 0 0 4px var(--azul-institucional);
+}
+
+/* Contenido de cada elemento */
+.timeline-content {
+    background: var(--blanco);
+    padding: 1.5rem 2rem;
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(26,54,93,0.06);
+    transition: all 0.3s ease;
+    border-left: 5px solid var(--dorado-accent);
+}
+
+.timeline-item:nth-child(even) .timeline-content {
+    border-left-color: var(--azul-institucional);
+}
+
+.timeline-content:hover {
+    transform: translateX(6px);
+    box-shadow: 0 8px 30px rgba(26,54,93,0.10);
+}
+
+/* Número y año */
+.timeline-content .header {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.timeline-content .numero {
+    font-size: 2.2rem;
+    font-weight: 900;
+    color: var(--dorado-accent);
+    line-height: 1;
+}
+
+.timeline-item:nth-child(even) .timeline-content .numero {
+    color: var(--azul-institucional);
+}
+
+.timeline-content .anio {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--azul-marino);
+}
+
+.timeline-content h4 {
+    font-size: 1.15rem;
+    font-weight: 700;
+    margin: 0.2rem 0 0.4rem 0;
+    color: var(--azul-marino);
+}
+
+.timeline-content p {
     color: #4A5568;
-
-    font-family: "Open Sans", "Roboto", sans-serif;
-
-    font-size: 16px;
-
+    font-size: 0.95rem;
+    margin: 0;
     line-height: 1.7;
 }
 
-
-/* =========================================================
-   CONTENEDOR DE LOS PROYECTOS
-   ========================================================= */
-
-.proyectos-contenedor {
-    position: relative;
-    z-index: 2;
-
-    max-width: 950px;
-
-    margin: 0 auto;
-
-    display: grid;
-
-    grid-template-columns: repeat(2, 1fr);
-
-    gap: 30px;
+.timeline-content p strong {
+    color: var(--azul-marino);
 }
 
-
-/* =========================================================
-   TARJETAS
-   ========================================================= */
-
-.proyecto-card {
-    position: relative;
-
-    display: flex;
-
-    align-items: flex-start;
-
-    gap: 20px;
-
-    padding: 30px;
-
-    background: rgba(255, 255, 255, 0.78);
-
-    border: 1px solid rgba(43, 108, 176, 0.16);
-
-    border-radius: 18px;
-
-    border-top: 5px solid #2B6CB0;
-
-    box-shadow:
-        0 8px 28px rgba(26, 54, 93, 0.09);
-
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-
-    transition:
-        transform 0.3s ease,
-        box-shadow 0.3s ease,
-        border-color 0.3s ease;
+/* ===== RESPONSIVE LÍNEA DE TIEMPO ===== */
+@media screen and (max-width: 768px) {
+    .timeline {
+        padding-left: 30px;
+    }
+    
+    .timeline::before {
+        left: 8px;
+    }
+    
+    .timeline-item {
+        padding-left: 28px;
+    }
+    
+    .timeline-item::before {
+        left: -30px;
+        width: 16px;
+        height: 16px;
+    }
+    
+    .timeline-content {
+        padding: 1.2rem 1.5rem;
+    }
+    
+    .timeline-content .numero {
+        font-size: 1.8rem;
+    }
+    
+    .timeline-content .anio {
+        font-size: 1.2rem;
+    }
+    
+    .timeline-content h4 {
+        font-size: 1rem;
+    }
 }
 
-
-/* Efecto al pasar el mouse */
-
-.proyecto-card:hover {
-    transform: translateY(-6px);
-
-    border-top-color: #D69E2E;
-
-    box-shadow:
-        0 15px 35px rgba(26, 54, 93, 0.15);
+@media screen and (max-width: 480px) {
+    .timeline {
+        padding-left: 20px;
+    }
+    
+    .timeline::before {
+        left: 4px;
+        width: 3px;
+    }
+    
+    .timeline-item {
+        padding-left: 20px;
+        margin-bottom: 1.5rem;
+    }
+    
+    .timeline-item::before {
+        left: -24px;
+        width: 14px;
+        height: 14px;
+        border-width: 3px;
+    }
+    
+    .timeline-content {
+        padding: 1rem 1.2rem;
+    }
+    
+    .timeline-content .numero {
+        font-size: 1.5rem;
+    }
+    
+    .timeline-content .anio {
+        font-size: 1rem;
+    }
 }
 
-
-/* =========================================================
-   ICONOS
-   ========================================================= */
-
-.proyecto-icono {
-    flex-shrink: 0;
-
-    width: 60px;
-    height: 60px;
-
-    display: flex;
-
-    align-items: center;
-    justify-content: center;
-
-    background: rgba(43, 108, 176, 0.10);
-
-    border: 1px solid rgba(43, 108, 176, 0.18);
-
-    border-radius: 14px;
-
-    font-size: 27px;
-
-    transition:
-        transform 0.3s ease,
-        background 0.3s ease;
+/* ===== MISIÓN Y VISIÓN ===== */
+.mv-card {
+    background: var(--blanco);
+    padding: 2rem 2.5rem;
+    border-radius: 20px;
+    box-shadow: 0 8px 30px rgba(26,54,93,0.06);
+    height: 100%;
+    border-left: 6px solid var(--dorado-accent);
+    transition: all 0.3s ease;
 }
-
-
-.proyecto-card:hover .proyecto-icono {
-    transform: scale(1.05);
-
-    background: rgba(214, 158, 46, 0.12);
+.mv-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 40px rgba(26,54,93,0.10);
 }
-
-
-/* =========================================================
-   CONTENIDO
-   ========================================================= */
-
-.proyecto-contenido {
-    flex: 1;
+.mv-card.vision {
+    border-left-color: var(--azul-institucional);
 }
-
-
-/* Número del proyecto */
-
-.proyecto-numero {
-    display: block;
-
-    margin-bottom: 7px;
-
-    color: #D69E2E;
-
-    font-family: "Montserrat", "Inter", sans-serif;
-
-    font-size: 11px;
-
+.mv-card h3 {
+    font-size: 1.8rem;
     font-weight: 800;
-
-    letter-spacing: 1.2px;
-
-    text-transform: uppercase;
+    margin-bottom: 0.8rem;
+    display: flex;
+    align-items: center;
+    gap: 12px;
 }
-
-
-/* Nombre del proyecto */
-
-.proyecto-contenido h3 {
-    margin: 0 0 12px;
-
-    color: #1A365D;
-
-    font-family: "Montserrat", "Inter", sans-serif;
-
-    font-size: 22px;
-
-    font-weight: 700;
-
-    line-height: 1.3;
+.mv-card h3 i {
+    font-size: 1.8rem;
 }
-
-
-/* Descripción */
-
-.proyecto-contenido p {
-    margin: 0;
-
+.mv-card h3 .icon-mision { color: var(--dorado-accent); }
+.mv-card h3 .icon-vision { color: var(--azul-institucional); }
+.mv-card p {
     color: #4A5568;
-
-    font-family: "Open Sans", "Roboto", sans-serif;
-
-    font-size: 15px;
-
-    line-height: 1.75;
+    font-size: 1.05rem;
+    line-height: 1.8;
+    margin: 0;
 }
 
-
-/* =========================================================
-   DIFERENCIAR LOS DOS PROYECTOS
-   ========================================================= */
-
-/* Kira Learning */
-
-.proyecto-card:first-child {
-    border-top-color: #2B6CB0;
+/* ===== RESPONSIVE GENERAL ===== */
+@media screen and (max-width: 640px) {
+    .top-bar { padding: 0.5rem 1rem !important; }
+    .top-bar .menu a { font-size: 0.75rem !important; padding: 0.4rem 0.8rem !important; }
+    .logo-colegio img { height: 40px !important; width: 40px !important; }
+    .logo-colegio .nombre-institucion .principal { font-size: 0.8rem !important; }
+    .logo-colegio .nombre-institucion .secundario { font-size: 1rem !important; }
+    .seccion-titulo h2 { font-size: 2rem; }
+    .seccion { padding: 2.5rem 0; }
+    .mv-card { padding: 1.5rem; }
+    .mv-card h3 { font-size: 1.4rem; }
+    .mv-card p { font-size: 0.95rem; }
 }
-
-
-/* Fiction Express */
-
-.proyecto-card:last-child {
-    border-top-color: #D69E2E;
-}
-
-
-/* =========================================================
-   TABLETS
-   ========================================================= */
-
-@media (max-width: 768px) {
-
-    .proyectos-pedagogicos {
-        padding: 65px 18px;
-    }
-
-    .proyectos-titulo h2 {
-        font-size: 32px;
-    }
-
-    .proyectos-contenedor {
-        grid-template-columns: 1fr;
-
-        max-width: 650px;
-    }
-
-    .proyecto-card {
-        padding: 27px;
-    }
-}
-
-
-/* =========================================================
-   CELULARES
-   ========================================================= */
-
-@media (max-width: 550px) {
-
-    .proyectos-pedagogicos {
-        padding: 55px 14px;
-    }
-
-    .proyectos-titulo {
-        margin-bottom: 40px;
-    }
-
-    .proyectos-titulo span {
-        font-size: 10px;
-
-        letter-spacing: 1px;
-    }
-
-    .proyectos-titulo h2 {
-        font-size: 27px;
-    }
-
-    .proyectos-titulo p {
-        font-size: 15px;
-    }
-
-    .proyectos-contenedor {
-        gap: 20px;
-    }
-
-    .proyecto-card {
-        display: block;
-
-        padding: 22px;
-
-        border-radius: 15px;
-    }
-
-    .proyecto-icono {
-        width: 50px;
-        height: 50px;
-
-        margin-bottom: 16px;
-
-        font-size: 23px;
-    }
-
-    .proyecto-numero {
-        font-size: 10px;
-    }
-
-    .proyecto-contenido h3 {
-        font-size: 19px;
-    }
-
-    .proyecto-contenido p {
-        font-size: 14px;
-
-        line-height: 1.7;
-    }
-}
-
   </style>
 </head>
 <body>
 
-<!-- ===== NAVEGACIÓN ===== -->
-<div class="top-bar" data-responsive-toggle="main-menu" data-hide-for="medium" style="flex-wrap: wrap; padding: 0.5rem 2rem 0.2rem; background: var(--azul-marino); border-bottom: 3px solid var(--dorado-accent);">
-  
-  <!-- ===== PARTE SUPERIOR: Logo y Nombre ===== -->
-  <div class="top-bar-left" style="flex: 0 0 100%; margin-bottom: 0.3rem;">
-    <ul class="menu">
-      <li class="menu-text logo-colegio" style="display: flex; align-items: center; flex-wrap: wrap; padding: 0.5rem 0;">
-        
-        <!-- ESCUDO - ¡REEMPLAZA AQUÍ! -->
-        <img 
-          src="https://scontent.fsal2-1.fna.fbcdn.net/v/t39.30808-6/431883354_122128769084180586_2996250489034907883_n.jpg?stp=c0.173.1521.1521a_dst-jpg_tt6&cstp=mx1521x1521&ctp=s206x206&_nc_cat=100&ccb=1-7&_nc_sid=fe5ecc&_nc_ohc=0GdJF4GRK-UQ7kNvwGJO6v0&_nc_oc=AdormT1pAIUrg_A1r6pmy_PuOyERG1w7ybEOZQeV4oxoHBX8h20DShXRZsAI-Sh5_LsD7QnGZliu_6Y0wCCvaF4p&_nc_zt=23&_nc_ht=scontent.fsal2-1.fna&_nc_gid=SVg2UL5fjDXV32ezhNogBQ&_nc_ss=7b289&oh=00_AQI9w0j_2DraypeM1qfU-qv2NmwNjMY_eKhF5cPg6zXDEQ&oe=6A9AEE3F" 
-          alt="Escudo del Colegio" 
-          style="height: 90px; width: 90px; object-fit: cover; border-radius: 50%; border: 3.5px solid var(--dorado-accent); margin-right: 15px; box-shadow: 0 4px 15px rgba(214, 158, 46, 0.3);">
-        
-         <!-- Nombre en una sola línea -->
-  <span style="font-size: 2.3rem; font-weight: 800; color: var(--azul-marino); letter-spacing: 0.5px;">
-    COMPLEJO EDUCATIVO <span style="color: var(--dorado-accent);">"10 DE OCTUBRE 1987"</span>
-  </span>
-  
-</li>
+  <nav class="navegacion-principal">
+
+    <div class="logo">
+        <a href="#inicio" style="display: flex; align-items: center; gap: 12px; text-decoration: none;">
+            <!-- ============================================================
+                 IMAGEN 1: LOGO (con tu URL de Facebook)
+                 ============================================================ -->
+            <img src="https://scontent.fsal1-1.fna.fbcdn.net/v/t39.30808-6/431883354_122128769084180586_2996250489034907883_n.jpg?stp=dst-jpg_tt6&cstp=mx1521x2044&ctp=s1521x2044&_nc_cat=100&ccb=1-7&_nc_sid=a5f93a&_nc_ohc=C_4rpJrE9AIQ7kNvwGbU1gZ&_nc_oc=AdpO0Bsb5_rniIkyzvs9jArPFPt_hCdHQIl-0lzdv-3OrzW4fYiLio3XsnloUoPEOd4&_nc_zt=23&_nc_ht=scontent.fsal1-1.fna&_nc_gid=xCHtu1xCU2OI1vb3PbR59g&_nc_ss=7b289&oh=00_AQKG9l3dqJnuyOa0AB1_Oa8rFxbQBHntuE-mNp752E3N3Q&oe=6A9FFBFF" 
+                 alt="Logo del Complejo Educativo" 
+                 style="width: 55px; height: 55px; border-radius: 50%; border: 3px solid #D69E2E; object-fit: cover;">
+
+            <!-- ============================================================
+                 NOMBRE DEL COMPLEJO EDUCATIVO
+                 ============================================================ -->
+            <div style="display: flex; flex-direction: column; line-height: 1.1;">
+                <span style="color: #FFFFFF; font-family: 'Montserrat', sans-serif; font-size: 14px; font-weight: 700;">Complejo Educativo</span>
+                <span style="color: #D69E2E; font-family: 'Montserrat', sans-serif; font-size: 16px; font-weight: 800;">"10 de Octubre 1987"</span>
+            </div>
+        </a>
+    </div>
+
+        <!-- INICIO -->
+        <li>
+            <a href="#inicio">Inicio</a>
+        </li>
+
+        <!-- NOSOTROS -->
+        <li class="tiene-submenu">
+            <button class="boton-menu" type="button">
+                Nosotros <span class="flecha">▼</span>
+            </button>
+
+            <ul class="submenu-oculto">
+                <li><a href="#historia">Historia</a></li>
+                <li><a href="#mision">Misión</a></li>
+                <li><a href="#vision">Visión</a></li>
+                <li><a href="#valores">Valores</a></li>
+                <li><a href="#proyectos">Proyectos Pedagógicos</a></li>
+            </ul>
+        </li>
+
+        <!-- OFERTA ACADÉMICA -->
+        <li class="tiene-submenu">
+            <button class="boton-menu" type="button">
+                Oferta Académica <span class="flecha">▼</span>
+            </button>
+
+            <ul class="submenu-oculto">
+                <li><a href="#oferta">Educación Parvularia</a></li>
+                <li><a href="#oferta">Educación Primaria / Básica</a></li>
+                <li><a href="#oferta">Educación Secundaria / Bachillerato</a></li>
+                <li><a href="#oferta">Actividades Extracurriculares y Deportes</a></li>
+            </ul>
+        </li>
+
+        <!-- ADMISIONES -->
+        <li class="tiene-submenu">
+            <button class="boton-menu" type="button">
+                Admisiones <span class="flecha">▼</span>
+            </button>
+
+            <ul class="submenu-oculto">
+                <li><a href="#admisiones">Proceso de matrícula</a></li>
+                <li><a href="#formulario">Formulario de inscripción online</a></li>
+            </ul>
+        </li>
+
+        <!-- CONTACTO -->
+        <li class="tiene-submenu">
+            <button class="boton-menu" type="button">
+                Contacto <span class="flecha">▼</span>
+            </button>
+
+            <ul class="submenu-oculto">
+                <li><a href="#ubicacion">Ubicación con Google Maps</a></li>
+                <li><a href="#soporte">Formulario de soporte</a></li>
+            </ul>
+        </li>
+
     </ul>
-  </div>
 
-  <!-- ===== LÍNEA DIVISORIA ===== -->
-  <hr style="border: none; border-top: 2px solid var(--dorado-accent); margin: 0.2rem 0 0.5rem; width: 100%; opacity: 0.3;">
-
-  <!-- ===== PARTE INFERIOR: Menú de navegación ===== -->
-  <div class="top-bar-right" style="flex: 0 0 100%;">
-    <ul class="menu" data-responsive-menu="drilldown medium-dropdown" style="justify-content: center; flex-wrap: wrap;">
-      <li class="active"><a href="#inicio" style="color: var(--azul-marino); font-weight: 600;"><i class="fas fa-home"></i> Inicio</a></li>
-      <li><a href="#nosotros" style="color: var(--azul-marino); font-weight: 600;"><i class="fas fa-users"></i> Nosotros</a></li>
-      <li><a href="#oferta" style="color: var(--azul-marino); font-weight: 600;"><i class="fas fa-book"></i> Oferta</a></li>
-      <li><a href="#admisiones" style="color: var(--azul-marino); font-weight: 600;"><i class="fas fa-pencil-alt"></i> Admisiones</a></li>
-      <li><a href="#docentes" style="color: var(--azul-marino); font-weight: 600;"><i class="fas fa-chalkboard-teacher"></i> Docentes</a></li>
-      <li><a href="#ubicacion" style="color: var(--azul-marino); font-weight: 600;"><i class="fas fa-map-marker-alt"></i> Ubicación</a></li>
-      <li><a href="#contacto" style="color: var(--azul-marino); font-weight: 600;"><i class="fas fa-envelope"></i> Contacto</a></li>
-    </ul>
-  </div>
-
-</div>
-
+</nav>
+  
   <!-- ===== INICIO ===== -->
   <section id="inicio">
-    <div class="hero-banner text-center">
+    <div style="background: linear-gradient(135deg, var(--azul-marino), var(--azul-institucional)); padding: 4rem 1.5rem; color: var(--blanco); border-bottom: 5px solid var(--dorado-accent); text-align: center;">
       <div class="grid-container">
         <div class="grid-x grid-margin-x align-center">
           <div class="cell medium-10 large-8">
-            <h1>
-              Educación que <br>
-              <span class="highlight">trasciende</span> fronteras
-            </h1>
-            <p class="propuesta">Formación integral con valores, innovación y calidez humana. Descubre un modelo educativo que prepara para la vida.</p>
-            <div>
-              <a href="#admisiones" class="btn-dorado"><i class="fas fa-rocket"></i> Inscríbete ahora</a>
-              <a href="#nosotros" class="btn-azul" style="margin-left: 0.8rem;"><i class="fas fa-play-circle"></i> Conócenos</a>
-            </div>
+            <h1 style="color: var(--blanco); font-size: 3.5rem; font-weight: 900;">Educación que <br><span style="color: var(--dorado-accent);">trasciende</span> fronteras</h1>
+            <p style="font-size: 1.4rem; font-weight: 300; max-width: 700px; margin: 1rem auto 2rem;">Formación integral con valores, innovación y calidez humana.</p>
+            <a href="#formulario" class="btn-dorado"><i class="fas fa-rocket"></i> Inscríbete ahora</a>
+            <a href="#historia" class="btn-azul" style="margin-left: 0.8rem;"><i class="fas fa-play-circle"></i> Conócenos</a>
           </div>
         </div>
       </div>
     </div>
 
-    <!-- ===== PORTALES DE ACCESO RÁPIDO ===== -->
-<div class="grid-container" style="margin-top: -3rem; position: relative; z-index: 2;">
-  <div class="grid-x grid-margin-x align-center">
-    
-    <!-- Portal Estudiantil -->
-    <div class="cell small-6 medium-3">
-      <div class="portal-card" style="background: var(--blanco); border-radius: 20px; padding: 1.5rem 1rem; box-shadow: 0 8px 30px rgba(26, 54, 93, 0.08); transition: all 0.3s; height: 100%; border: 1px solid rgba(43, 108, 176, 0.06); text-align: center;">
-        <div class="icon-wrapper" style="width: 70px; height: 70px; border-radius: 50%; background: linear-gradient(135deg, var(--azul-institucional) 0%, var(--azul-marino) 100%); display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; box-shadow: 0 8px 25px rgba(43, 108, 176, 0.2);">
-          <i class="fas fa-user-graduate" style="color: var(--blanco); font-size: 2rem;"></i>
-        </div>
-        <h4 style="color: var(--azul-marino); font-weight: 700; font-size: 1rem;">Portal Estudiantil</h4>
-        <p style="color: #4A5568; font-size: 0.85rem;">Horarios y recursos.</p>
+    <!-- Portales -->
+    <div class="grid-container" style="margin-top: -2rem; position: relative; z-index: 2;">
+      <div class="grid-x grid-margin-x align-center">
+        <div class="cell medium-3 small-6"><div class="portal-card"><div class="icon-wrapper"><i class="fas fa-user-graduate"></i></div><h4>Portal Estudiantil</h4><p>Horarios y recursos.</p></div></div>
+        <div class="cell medium-3 small-6"><div class="portal-card"><div class="icon-wrapper dorado"><i class="fas fa-chalkboard"></i></div><h4>Docentes</h4><p>Planeación y herramientas.</p></div></div>
+        <div class="cell medium-3 small-6"><div class="portal-card"><div class="icon-wrapper"><i class="fas fa-users"></i></div><h4>Padres de familia</h4><p>Comunicación y seguimiento.</p></div></div>
+        <div class="cell medium-3 small-6"><div class="portal-card"><div class="icon-wrapper dorado"><i class="fas fa-newspaper"></i></div><h4>Noticias</h4><p>Eventos y logros académicos.</p></div></div>
       </div>
     </div>
 
-    <!-- Docentes -->
-    <div class="cell small-6 medium-3">
-      <div class="portal-card" style="background: var(--blanco); border-radius: 20px; padding: 1.5rem 1rem; box-shadow: 0 8px 30px rgba(26, 54, 93, 0.08); transition: all 0.3s; height: 100%; border: 1px solid rgba(43, 108, 176, 0.06); text-align: center;">
-        <div class="icon-wrapper" style="width: 70px; height: 70px; border-radius: 50%; background: linear-gradient(135deg, var(--dorado-accent) 0%, #c48a1e 100%); display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; box-shadow: 0 8px 25px rgba(214, 158, 46, 0.3);">
-          <i class="fas fa-chalkboard" style="color: var(--azul-marino); font-size: 2rem;"></i>
-        </div>
-        <h4 style="color: var(--azul-marino); font-weight: 700; font-size: 1rem;">Docentes</h4>
-        <p style="color: #4A5568; font-size: 0.85rem;">Planeación y herramientas.</p>
-      </div>
-    </div>
-
-    <!-- Padres de familia -->
-    <div class="cell small-6 medium-3">
-      <div class="portal-card" style="background: var(--blanco); border-radius: 20px; padding: 1.5rem 1rem; box-shadow: 0 8px 30px rgba(26, 54, 93, 0.08); transition: all 0.3s; height: 100%; border: 1px solid rgba(43, 108, 176, 0.06); text-align: center;">
-        <div class="icon-wrapper" style="width: 70px; height: 70px; border-radius: 50%; background: linear-gradient(135deg, var(--azul-institucional) 0%, var(--azul-marino) 100%); display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; box-shadow: 0 8px 25px rgba(43, 108, 176, 0.2);">
-          <i class="fas fa-users" style="color: var(--blanco); font-size: 2rem;"></i>
-        </div>
-        <h4 style="color: var(--azul-marino); font-weight: 700; font-size: 1rem;">Padres de familia</h4>
-        <p style="color: #4A5568; font-size: 0.85rem;">Comunicación y seguimiento.</p>
-      </div>
-    </div>
-
-    <!-- Noticias -->
-    <div class="cell small-6 medium-3">
-      <div class="portal-card" style="background: var(--blanco); border-radius: 20px; padding: 1.5rem 1rem; box-shadow: 0 8px 30px rgba(26, 54, 93, 0.08); transition: all 0.3s; height: 100%; border: 1px solid rgba(43, 108, 176, 0.06); text-align: center;">
-        <div class="icon-wrapper" style="width: 70px; height: 70px; border-radius: 50%; background: linear-gradient(135deg, var(--dorado-accent) 0%, #c48a1e 100%); display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; box-shadow: 0 8px 25px rgba(214, 158, 46, 0.3);">
-          <i class="fas fa-newspaper" style="color: var(--azul-marino); font-size: 2rem;"></i>
-        </div>
-        <h4 style="color: var(--azul-marino); font-weight: 700; font-size: 1rem;">Noticias</h4>
-        <p style="color: #4A5568; font-size: 0.85rem;">Eventos y logros académicos.</p>
-      </div>
-    </div>
-
-  </div>
-</div>
-<!-- ===== SECCIÓN DE VIDEO ===== -->
-<div class="grid-x grid-margin-x align-center" style="margin-top: 3rem;">
-  <div class="cell text-center mb-3">
-    <p style="color: var(--azul-institucional); font-weight: 700; text-transform: uppercase; letter-spacing: 3px; font-size: 0.85rem;">
-      <i class="fas fa-video" style="color: var(--dorado-accent);"></i> Conoce Nuestras Instalaciones
-    </p>
-    <h3 class="border-dorado">Recorrido Virtual</h3>
-    <p class="lead" style="color: #4A5568;">Te invitamos a conocer nuestro colegio a través de este video</p>
-  </div>
-
-  <div class="cell medium-4">
-    <div style="border-radius: 20px; overflow: hidden; box-shadow: 0 20px 60px rgba(26, 54, 93, 0.12); border: 4px solid var(--dorado-accent); background: #000;">
-
-      <!-- VIDEO DE GOOGLE DRIVE -->
-      <div class="video-wrapper" style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
-        <iframe 
-          src="https://drive.google.com/file/d/1PKASYnFL9ezY21Dbe7Qj9zWybANrHBav/preview" 
-          width="100%" 
-          height="100%" 
-          allow="autoplay"
-          style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none;">
-        </iframe>
-      </div>
-
-    </div>
-  </div>
-</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section> 
-
-
-  <!-- ===== NOSOTROS ===== -->
-   
-  <section id="nosotros" class="seccion-nosotros">
-    <div class="grid-container">
+    <!-- Video -->
+    <div class="grid-container" style="margin-top: 3rem;">
       <div class="grid-x grid-margin-x align-center">
         <div class="cell text-center mb-3">
-          <p style="color: var(--azul-institucional); font-weight: 700; text-transform: uppercase; letter-spacing: 3px; font-size: 0.85rem;">
-            <i class="fas fa-graduation-cap" style="color: var(--dorado-accent);"></i> Sobre nosotros
-          </p>
+          <p style="color: var(--azul-institucional); font-weight: 700; text-transform: uppercase; letter-spacing: 3px;"><i class="fas fa-video" style="color: var(--dorado-accent);"></i> Conoce Nuestras Instalaciones</p>
+          <h3 class="border-dorado">Recorrido Virtual</h3>
         </div>
-      </div>
-      
-            <section class="historia" id="historia">
-
-    <div class="historia-titulo">
-        <span>CONOCE NUESTRA HISTORIA</span>
-        <h2>Origen del Complejo Educativo "10 de Octubre"</h2>
-        <p>
-            Una historia de esfuerzo, educación, organización y compromiso
-            de la comunidad.
-        </p>
-    </div>
-
-    <div class="historia-contenedor">
-
-        <!-- HISTORIA 1 -->
-        <article class="historia-item">
-            <div class="historia-numero">01</div>
-
-            <div class="historia-contenido">
-                <div class="historia-icono">📅</div>
-
-                <div class="historia-texto">
-                    <span class="historia-fecha">Años 1980–1981</span>
-
-                    <h3>Crisis y desplazamiento</h3>
-
-                    <p>
-                        La violencia y la crisis obligaron a suspender las clases de la
-                        escuela inicial. Las comunidades abandonaron sus hogares y
-                        emigraron hacia Honduras, pasando por el río Sumpul, hasta
-                        establecerse en el campamento de refugio Mesa Grande.
-                    </p>
-                </div>
+        <div class="cell medium-8">
+          <div style="border-radius: 20px; overflow: hidden; box-shadow: 0 20px 60px rgba(26,54,93,0.12); border: 4px solid var(--dorado-accent); background: #000;">
+            <div class="video-wrapper">
+              <iframe src="https://drive.google.com/file/d/1DxmYrzbfO7NNw3UnVFaGId1QWMPUvvqQ/preview" allow="autoplay" allowfullscreen></iframe>
             </div>
-        </article>
-
-
-        <!-- HISTORIA 2 -->
-        <article class="historia-item">
-            <div class="historia-numero">02</div>
-
-            <div class="historia-contenido">
-                <div class="historia-icono">📚</div>
-
-                <div class="historia-texto">
-                    <span class="historia-fecha">Etapa de refugio</span>
-
-                    <h3>Nacimiento de la Educación Popular</h3>
-
-                    <p>
-                        En el refugio surgió un modelo educativo empírico, donde personas
-                        de la misma comunidad que habían cursado quinto o sexto grado
-                        voluntariamente daban clases a los demás miembros de la comunidad.
-                    </p>
-                </div>
-            </div>
-        </article>
-
-
-        <!-- HISTORIA 3 -->
-        <article class="historia-item">
-            <div class="historia-numero">03</div>
-
-            <div class="historia-contenido">
-                <div class="historia-icono">🏠</div>
-
-                <div class="historia-texto">
-                    <span class="historia-fecha">1987</span>
-
-                    <h3>Retorno a El Salvador</h3>
-
-                    <p>
-                        El 9 de octubre de 1987, la comunidad se organizó para regresar
-                        a El Salvador, llegando a Santa Marta el 10 de octubre.
-                        Se alojaron provisionalmente en lo que actualmente es el módulo
-                        central del complejo educativo.
-                    </p>
-                </div>
-            </div>
-        </article>
-
-
-        <!-- HISTORIA 4 -->
-        <article class="historia-item">
-            <div class="historia-numero">04</div>
-
-            <div class="historia-contenido">
-                <div class="historia-icono">🎓</div>
-
-                <div class="historia-texto">
-                    <span class="historia-fecha">1988 en adelante</span>
-
-                    <h3>Reinicio de clases</h3>
-
-                    <p>
-                        En 1988 se reactivaron formalmente las clases ad honorem,
-                        utilizando los recursos disponibles en la zona.
-                    </p>
-                </div>
-            </div>
-        </article>
-
-
-        <!-- HISTORIA 5 -->
-        <article class="historia-item">
-            <div class="historia-numero">05</div>
-
-            <div class="historia-contenido">
-                <div class="historia-icono">🤝</div>
-
-                <div class="historia-texto">
-                    <span class="historia-fecha">Durante la ofensiva de 1989</span>
-
-                    <h3>Autogestión y apoyo comunitario</h3>
-
-                    <p>
-                        Durante la ofensiva de 1989, muchos maestros se involucraron
-                        en el conflicto y algunos no regresaron. El proyecto educativo
-                        se sostuvo principalmente mediante la autogestión comunitaria
-                        y el apoyo de ONG, la Iglesia Luterana e instituciones
-                        internacionales, ante la escasa ayuda del MINED.
-                    </p>
-                </div>
-            </div>
-        </article>
-
-    </div>
-
-</section>
-
-
-      <!-- ===== NOSOTROS (MISIÓN, VISIÓN, VALORES CON IMAGEN) ===== -->
-<section id="nosotros" style="padding: 4rem 0; background: var(--gris-claro);">
-  <div class="grid-container">
-    
-    <!-- Título -->
-    <div class="grid-x grid-margin-x align-center">
-      <div class="cell text-center mb-3">
-        <p style="color: var(--azul-institucional); font-weight: 700; text-transform: uppercase; letter-spacing: 3px; font-size: 0.85rem;">
-          <i class="fas fa-graduation-cap" style="color: var(--dorado-accent);"></i> Conócenos
-        </p>
-        <h2 style="font-size: 2.5rem; font-weight: 800; color: var(--azul-marino);">Nuestra Identidad</h2>
-        <p class="lead" style="color: #4A5568; max-width: 700px; margin: 0 auto;">Conoce quiénes somos, qué nos mueve y hacia dónde vamos</p>
+          </div>
+        </div>
       </div>
     </div>
+  </section>
 
-    <!-- FILA CON IMAGEN + MISIÓN Y VISIÓN -->
-    <div class="grid-x grid-margin-x align-stretch" style="margin-top: 1.5rem;">
-      
-      <!-- IMAGEN - ¡REEMPLAZA AQUÍ! -->
-      <div class="cell medium-5">
-        <img 
-          src="https://scontent.fsal2-2.fna.fbcdn.net/v/t39.30808-6/474514464_122190954644180586_8760803038534618620_n.jpg?stp=dst-jpg_tt6&cstp=mx2048x1538&ctp=s960x960&_nc_cat=105&ccb=1-7&_nc_sid=cc71e4&_nc_ohc=CwYLH3LHC-8Q7kNvwF2rOtJ&_nc_oc=AdpFAfZm_7taMU8vBDMoUM2_KUp4qxBDpVUajpmPqEt1WCco8hcCOGJAlEa0o1FgM1yuGOO_BufUi-UF3iZ280LX&_nc_zt=23&_nc_ht=scontent.fsal2-2.fna&_nc_gid=WNpqkYmOyRWL1HIsNkmVmA&_nc_ss=7b289&oh=00_AQJyRq0oKVqD538Or5FwaWZlLZfkG9q3KZb3jL4WfcGGyA&oe=6A9B91C3" 
-          alt="Nuestro Colegio" 
-          style="width: 100%; height: 100%; min-height: 300px; object-fit: cover; border-radius: 25px; box-shadow: 0 20px 60px rgba(26, 54, 93, 0.12); border: 4px solid var(--dorado-accent);">
+  <!-- ===== HISTORIA ===== -->
+  <section id="historia" class="seccion bg-gris">
+    <div class="grid-container">
+      <div class="seccion-titulo">
+        <p class="etiqueta"><i class="fas fa-clock"></i> Sobre nosotros</p>
+        <h2>CONOCE NUESTRA HISTORIA</h2>
+        <p class="descripcion">Un recorrido por nuestra trayectoria educativa desde 1980 hasta la actualidad</p>
       </div>
-      
-      <!-- MISIÓN Y VISIÓN -->
-      <div class="cell medium-7">
-        <div class="grid-x grid-margin-x align-stretch" style="height: 100%;">
-          
-          <!-- MISIÓN -->
-          <div class="cell small-12 medium-6" style="margin-bottom: 1rem;">
-            <div style="background: var(--blanco); padding: 2rem; border-radius: 25px; box-shadow: 0 10px 40px rgba(26, 54, 93, 0.06); height: 100%; border-left: 6px solid var(--dorado-accent); transition: all 0.3s;">
-              <div style="display: flex; align-items: center; margin-bottom: 1rem;">
-                <div style="width: 50px; height: 50px; border-radius: 50%; background: linear-gradient(135deg, var(--dorado-accent) 0%, #c48a1e 100%); display: flex; align-items: center; justify-content: center; margin-right: 1rem; flex-shrink: 0;">
-                  <i class="fas fa-flag" style="color: var(--blanco); font-size: 1.5rem;"></i>
-                </div>
-                <h3 style="font-weight: 800; color: var(--azul-marino); margin: 0; font-size: 1.5rem;">Misión</h3>
-              </div>
-              <p style="color: #4A5568; font-size: 0.95rem; line-height: 1.7; margin-bottom: 0;">
-                Somos una institución educativa, formadora de estudiantes con un aprendizaje integral a través de la implementación de técnicas metodológicas, con una atención a la diversidad.
-              </p>
+
+      <!-- ============================================================
+           IMAGEN 2: HISTORIA (destacada)
+           Cambia la URL por la de tu imagen
+           ============================================================ -->
+      <div class="grid-x grid-margin-x align-center" style="margin-bottom: 2.5rem;">
+        <div class="cell medium-10">
+          <div class="imagen-historia-destacada" style="background-image: url('https://scontent.fsal5-1.fna.fbcdn.net/v/t39.30808-6/474514464_122190954644180586_8760803038534618620_n.jpg?stp=dst-jpg_tt6&cstp=mx2048x1538&ctp=s2048x1538&_nc_cat=105&ccb=1-7&_nc_sid=cc71e4&_nc_ohc=zT9nRvIHdTAQ7kNvwEFqeid&_nc_oc=AdqjX1cfJ2eTGt04qg8tB9Afs4CI_nlg3WIWCEcpn2UEO0LNNppzGdIY4oJ2PPWJx8M&_nc_zt=23&_nc_ht=scontent.fsal5-1.fna&_nc_gid=5I6vY3NCeRCJw4UyL9_FQg&_nc_ss=7b289&oh=00_AQJ-OLePWwqnVm1lFpGRmq8v0d42LfUdGLQ932Uw1hlc3w&oe=6A9FF6C3');">
+            <div class="overlay"></div>
+            <i class="fas fa-graduation-cap icono-grande"></i>
+            <h3 class="titulo-imagen">Complejo Educativo "10 de Octubre 1987"</h3>
+            <p class="subtitulo-imagen">Más de 35 años formando generaciones con excelencia y valores</p>
+            <span class="badge-dorado"><i class="fas fa-calendar-alt"></i> 1980 - Presente</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Línea de tiempo -->
+      <div class="timeline">
+
+        <div class="timeline-item">
+          <div class="timeline-content">
+            <div class="header">
+              <span class="numero">01</span>
+              <span class="anio">1980-1981</span>
             </div>
+            <h4>Crisis y desplazamiento</h4>
+            <p><strong>La violencia obligó a suspender las clases.</strong> Las comunidades emigraron hacia Honduras en busca de refugio.</p>
           </div>
+        </div>
 
-          <!-- VISIÓN -->
-          <div class="cell small-12 medium-6" style="margin-bottom: 1rem;">
-            <div style="background: var(--blanco); padding: 2rem; border-radius: 25px; box-shadow: 0 10px 40px rgba(26, 54, 93, 0.06); height: 100%; border-left: 6px solid var(--azul-institucional); transition: all 0.3s;">
-              <div style="display: flex; align-items: center; margin-bottom: 1rem;">
-                <div style="width: 50px; height: 50px; border-radius: 50%; background: linear-gradient(135deg, var(--azul-institucional) 0%, var(--azul-marino) 100%); display: flex; align-items: center; justify-content: center; margin-right: 1rem; flex-shrink: 0;">
-                  <i class="fas fa-eye" style="color: var(--blanco); font-size: 1.5rem;"></i>
-                </div>
-                <h3 style="font-weight: 800; color: var(--azul-marino); margin: 0; font-size: 1.5rem;">Visión</h3>
-              </div>
-              <p style="color: #4A5568; font-size: 0.95rem; line-height: 1.7; margin-bottom: 0;">
-                Ser una institución inclusiva que ofrece una educación de acuerdo a las necesidades del alumnado y la realidad en que vive, aprovechando los cambios tecnológicos y beneficios.
-              </p>
+        <div class="timeline-item">
+          <div class="timeline-content">
+            <div class="header">
+              <span class="numero">02</span>
+              <span class="anio">Etapa de refugio</span>
             </div>
+            <h4>Nacimiento de la Educación Popular</h4>
+            <p><strong>En el refugio surgió un modelo educativo empírico</strong> donde personas de la comunidad daban clases voluntarias.</p>
           </div>
-
         </div>
-      </div>
 
+        <div class="timeline-item">
+          <div class="timeline-content">
+            <div class="header">
+              <span class="numero">03</span>
+              <span class="anio">1987</span>
+            </div>
+            <h4>Retorno a El Salvador</h4>
+            <p><strong>El 9 de octubre de 1987, la comunidad se organizó para regresar,</strong> llegando a Santa Marta el 10 de octubre.</p>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-content">
+            <div class="header">
+              <span class="numero">04</span>
+              <span class="anio">1988</span>
+            </div>
+            <h4>Reinicio de clases</h4>
+            <p><strong>En 1988 se reactivaron formalmente las clases</strong> de manera ad honorem con el apoyo de la comunidad.</p>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-content">
+            <div class="header">
+              <span class="numero">05</span>
+              <span class="anio">1989</span>
+            </div>
+            <h4>Autogestión y apoyo comunitario</h4>
+            <p><strong>El proyecto se sostuvo por autogestión comunitaria,</strong> ONG, la Iglesia Luterana e instituciones internacionales.</p>
+          </div>
+        </div>
+
+      </div>
     </div>
+  </section>
 
-    <!-- VALORES (4 tarjetas) -->
-    <div class="grid-x grid-margin-x align-center" style="margin-top: 3rem;">
-      
-      <div class="cell text-center mb-2">
-        <h3 style="font-weight: 800; color: var(--azul-marino); font-size: 2rem;">
-          <i class="fas fa-heart" style="color: var(--dorado-accent);"></i> Nuestros Valores
-        </h3>
+  <!-- ===== MISIÓN ===== -->
+  <section id="mision" class="seccion bg-blanco">
+    <div class="grid-container">
+      <div class="seccion-titulo">
+        <p class="etiqueta"><i class="fas fa-bullseye"></i> Nuestra razón de ser</p>
+        <h2>Misión</h2>
       </div>
-
-      <!-- Respeto -->
-      <div class="cell medium-3 small-6">
-        <div style="background: var(--blanco); padding: 1.8rem 1.2rem; border-radius: 20px; box-shadow: 0 8px 30px rgba(26, 54, 93, 0.04); text-align: center; height: 100%; border: 1px solid rgba(43, 108, 176, 0.06); transition: all 0.3s;">
-          <div style="width: 65px; height: 65px; border-radius: 50%; background: rgba(214, 158, 46, 0.12); display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem;">
-            <i class="fas fa-handshake" style="color: var(--dorado-accent); font-size: 1.8rem;"></i>
+      <div class="grid-x grid-margin-x align-center">
+        <div class="cell medium-8">
+          <div class="mv-card">
+            <h3><i class="fas fa-rocket icon-mision"></i> Misión</h3>
+            <p>Somos una institución educativa, formadora de estudiantes con un aprendizaje integral a través de la implementación de técnicas metodológicas, con una atención a la diversidad.</p>
           </div>
-          <h4 style="font-weight: 700; color: var(--azul-marino); font-size: 1.1rem;">Respeto</h4>
-          <p style="color: #4A5568; font-size: 0.85rem; line-height: 1.6;">Reconocer, valorar y apreciar a los otros.</p>
         </div>
       </div>
-
-      <!-- Excelencia -->
-      <div class="cell medium-3 small-6">
-        <div style="background: var(--blanco); padding: 1.8rem 1.2rem; border-radius: 20px; box-shadow: 0 8px 30px rgba(26, 54, 93, 0.04); text-align: center; height: 100%; border: 1px solid rgba(43, 108, 176, 0.06); transition: all 0.3s;">
-          <div style="width: 65px; height: 65px; border-radius: 50%; background: rgba(43, 108, 176, 0.10); display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem;">
-            <i class="fas fa-star" style="color: var(--azul-institucional); font-size: 1.8rem;"></i>
-          </div>
-          <h4 style="font-weight: 700; color: var(--azul-marino); font-size: 1.1rem;">Excelencia</h4>
-          <p style="color: #4A5568; font-size: 0.85rem; line-height: 1.6;">Trabajar con calidad y mejorar continuamente.</p>
-        </div>
-      </div>
-
-      <!-- Honestidad -->
-      <div class="cell medium-3 small-6">
-        <div style="background: var(--blanco); padding: 1.8rem 1.2rem; border-radius: 20px; box-shadow: 0 8px 30px rgba(26, 54, 93, 0.04); text-align: center; height: 100%; border: 1px solid rgba(43, 108, 176, 0.06); transition: all 0.3s;">
-          <div style="width: 65px; height: 65px; border-radius: 50%; background: rgba(214, 158, 46, 0.12); display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem;">
-            <i class="fas fa-shield-alt" style="color: var(--dorado-accent); font-size: 1.8rem;"></i>
-          </div>
-          <h4 style="font-weight: 700; color: var(--azul-marino); font-size: 1.1rem;">Honestidad</h4>
-          <p style="color: #4A5568; font-size: 0.85rem; line-height: 1.6;">Actuar con rectitud y propiedad.</p>
-        </div>
-      </div>
-
-      <!-- Compromiso -->
-      <div class="cell medium-3 small-6">
-        <div style="background: var(--blanco); padding: 1.8rem 1.2rem; border-radius: 20px; box-shadow: 0 8px 30px rgba(26, 54, 93, 0.04); text-align: center; height: 100%; border: 1px solid rgba(43, 108, 176, 0.06); transition: all 0.3s;">
-          <div style="width: 65px; height: 65px; border-radius: 50%; background: rgba(43, 108, 176, 0.10); display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem;">
-            <i class="fas fa-hand-holding-heart" style="color: var(--azul-institucional); font-size: 1.8rem;"></i>
-          </div>
-          <h4 style="font-weight: 700; color: var(--azul-marino); font-size: 1.1rem;">Compromiso</h4>
-          <p style="color: #4A5568; font-size: 0.85rem; line-height: 1.6;">Dar todo de ti en cada acción.</p>
-        </div>
-      </div>
-
     </div>
-  </div>
-</section>
+  </section>
 
+  <!-- ===== VISIÓN ===== -->
+  <section id="vision" class="seccion bg-gris">
+    <div class="grid-container">
+      <div class="seccion-titulo">
+        <p class="etiqueta"><i class="fas fa-eye"></i> Nuestro futuro</p>
+        <h2>Visión</h2>
+      </div>
+      <div class="grid-x grid-margin-x align-center">
+        <div class="cell medium-8">
+          <div class="mv-card vision">
+            <h3><i class="fas fa-eye icon-vision"></i> Visión</h3>
+            <p>Ser una institución inclusiva que ofrece una educación de acuerdo a las necesidades del alumnado y la realidad en que vive, aprovechando los cambios tecnológicos y beneficios.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
+  <!-- ===== VALORES ===== -->
+  <section id="valores" class="seccion bg-blanco">
+    <div class="grid-container">
+      <div class="seccion-titulo">
+        <p class="etiqueta"><i class="fas fa-heart"></i> Principios</p>
+        <h2>Nuestros Valores</h2>
+      </div>
+      <div class="grid-x grid-margin-x align-center">
+        <div class="cell medium-3 small-6"><div style="background:var(--gris-claro);padding:1.5rem;border-radius:20px;text-align:center;border-top:5px solid var(--dorado-accent);"><i class="fas fa-handshake" style="font-size:3rem;color:var(--dorado-accent);"></i><h4>Respeto</h4><p>Reconocer, valorar y apreciar a los otros.</p></div></div>
+        <div class="cell medium-3 small-6"><div style="background:var(--gris-claro);padding:1.5rem;border-radius:20px;text-align:center;border-top:5px solid var(--azul-institucional);"><i class="fas fa-star" style="font-size:3rem;color:var(--azul-institucional);"></i><h4>Excelencia</h4><p>Trabajar con calidad y mejorar continuamente.</p></div></div>
+        <div class="cell medium-3 small-6"><div style="background:var(--gris-claro);padding:1.5rem;border-radius:20px;text-align:center;border-top:5px solid var(--dorado-accent);"><i class="fas fa-balance-scale" style="font-size:3rem;color:var(--dorado-accent);"></i><h4>Honestidad</h4><p>Actuar con rectitud y propiedad.</p></div></div>
+        <div class="cell medium-3 small-6"><div style="background:var(--gris-claro);padding:1.5rem;border-radius:20px;text-align:center;border-top:5px solid var(--azul-institucional);"><i class="fas fa-heart" style="font-size:3rem;color:var(--azul-institucional);"></i><h4>Compromiso</h4><p>Dar todo de ti en cada acción.</p></div></div>
+      </div>
+    </div>
+  </section>
 
   <!-- ===== PROYECTOS PEDAGÓGICOS ===== -->
-<section id="proyectos" style="padding: 4rem 0; background: var(--blanco);">
-  <div class="grid-container">
-    
-    <!-- Título de la sección -->
-    <div class="grid-x grid-margin-x align-center">
-      <div class="cell text-center mb-3">
-        <p style="color: var(--azul-institucional); font-weight: 700; text-transform: uppercase; letter-spacing: 3px; font-size: 0.85rem;">
-          <i class="fas fa-lightbulb" style="color: var(--dorado-accent);"></i> Proyectos Pedagógicos
-        </p>
+  <section id="proyectos" class="seccion bg-gris">
+    <div class="grid-container">
+      <div class="seccion-titulo">
+        <p class="etiqueta"><i class="fas fa-lightbulb" style="color:var(--dorado-accent);"></i> Proyectos Pedagógicos</p>
         <h2>Programas que fortalecen el aprendizaje</h2>
-        <p class="lead" style="color: #4A5568; max-width: 700px; margin: 0 auto;">
-          Contribuyen al desarrollo de las habilidades de nuestros estudiantes.
-        </p>
       </div>
-    </div>
-
-    <!-- Proyecto 1: Kira Learning -->
-    <div class="grid-x grid-margin-x align-center" style="margin-top: 2rem;">
-      
-      <!-- IMAGEN - ¡REEMPLAZA AQUÍ! -->
-      <div class="cell medium-5">
-        <img 
-          src="https://events.kira-learning.com/hs-fs/hubfs/Webinar%20(11).png?width=1920&height=900&name=Webinar%20(11).png" 
-          alt="Kira Learning" 
-          style="width: 100%; border-radius: 25px; box-shadow: 0 20px 60px rgba(26, 54, 93, 0.12); border: 4px solid var(--dorado-accent); object-fit: cover; min-height: 250px;">
-      </div>
-      
-      <div class="cell medium-7">
-        <div style="background: var(--gris-claro); padding: 2.5rem; border-radius: 25px; border-left: 6px solid var(--dorado-accent); height: 100%;">
-          <h3 style="color: var(--azul-marino); font-weight: 800; margin-bottom: 0.3rem;">
-            <i class="fas fa-robot" style="color: var(--dorado-accent);"></i> Kira Learning
-          </h3>
-          <p style="color: var(--azul-institucional); font-weight: 600; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 1rem;">
-            Proyecto Pedagógico 01
-          </p>
-          <p style="color: #4A5568; font-size: 1.05rem; line-height: 1.8;">
-            Proyecto pedagógico orientado al fortalecimiento del aprendizaje de los estudiantes mediante recursos y herramientas educativas.
-          </p>
+      <div class="grid-x grid-margin-x">
+        <div class="cell medium-6">
+          <div style="background:var(--blanco);padding:2rem;border-radius:25px;border-left:6px solid var(--dorado-accent);height:100%;">
+            <!-- ============================================================
+                 IMAGEN 3: KIRA LEARNING
+                 Cambia la URL por la de tu imagen
+                 ============================================================ -->
+            <div class="espacio-imagen imagen-con-fondo" style="min-height:180px;margin-bottom:1.5rem; background-image: url('https://events.kira-learning.com/hs-fs/hubfs/Webinar%20(11).png?width=1920&height=900&name=Webinar%20(11).png');">
+            </div>
+            <h3>Kira Learning</h3>
+            <p>Proyecto pedagógico orientado al fortalecimiento del aprendizaje de los estudiantes mediante recursos y herramientas educativas.</p>
+          </div>
+        </div>
+        <div class="cell medium-6">
+          <div style="background:var(--blanco);padding:2rem;border-radius:25px;border-left:6px solid var(--azul-institucional);height:100%;">
+            <!-- ============================================================
+                 IMAGEN 4: FICTION EXPRESS
+                 Cambia la URL por la de tu imagen
+                 ============================================================ -->
+            <div class="espacio-imagen imagen-con-fondo" style="min-height:180px;margin-bottom:1.5rem; background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSLDvOhHHE6BpVLdAdcawpKVqKODl3pM_8oH0sNLJ9gkU5qZI16X3bIw3k&s=10');">
+            </div>
+            <h3>Fiction Express</h3>
+            <p>Proyecto pedagógico que promueve la lectura y el desarrollo de habilidades de comprensión lectora mediante historias y actividades educativas.</p>
+          </div>
         </div>
       </div>
     </div>
-
-    <!-- Proyecto 2: Fiction Express -->
-    <div class="grid-x grid-margin-x align-center" style="margin-top: 3rem;">
-      
-      <!-- IMAGEN - ¡REEMPLAZA AQUÍ! -->
-      <div class="cell medium-5 medium-order-2">
-        <img 
-          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRKh2NFV98yW7P_qYel70zVtdBa6B__pChBoPhMFq39Og&s=10" 
-          alt="Fiction Express" 
-          style="width: 100%; border-radius: 25px; box-shadow: 0 20px 60px rgba(26, 54, 93, 0.12); border: 4px solid var(--dorado-accent); object-fit: cover; min-height: 250px;">
-      </div>
-      
-      <div class="cell medium-7 medium-order-1">
-        <div style="background: var(--gris-claro); padding: 2.5rem; border-radius: 25px; border-left: 6px solid var(--azul-institucional); height: 100%;">
-          <h3 style="color: var(--azul-marino); font-weight: 800; margin-bottom: 0.3rem;">
-            <i class="fas fa-book-open" style="color: var(--azul-institucional);"></i> Fiction Express
-          </h3>
-          <p style="color: var(--azul-institucional); font-weight: 600; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 1rem;">
-            Proyecto Pedagógico 02
-          </p>
-          <p style="color: #4A5568; font-size: 1.05rem; line-height: 1.8;">
-            Proyecto pedagógico que promueve la lectura y el desarrollo de habilidades de comprensión lectora mediante historias y actividades educativas.
-          </p>
-        </div>
-      </div>
-    </div>
-
-  </div>
-</section>
+  </section>
 
   <!-- ===== OFERTA ACADÉMICA ===== -->
-<section id="oferta" style="padding: 4rem 0; background: var(--blanco);">
-  <div class="grid-container">
-    
-    <!-- Título -->
-    <div class="grid-x grid-margin-x align-center">
-      <div class="cell text-center mb-3">
-        <p style="color: var(--dorado-accent); font-weight: 700; text-transform: uppercase; letter-spacing: 3px; font-size: 0.85rem;">
-          <i class="fas fa-book"></i> Oferta académica
-        </p>
-        <h2>Programas educativos<br>para cada etapa</h2>
-      </div>
-    </div>
-
-    <!-- Tarjetas de oferta -->
-    <div class="grid-x grid-margin-x">
-      
-      <!-- 1. Educación Parvularia -->
-      <div class="cell medium-3 small-6">
-        <div class="oferta-item" style="background: var(--blanco); border-radius: 20px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.02); border: 1px solid #edf2f7; transition: all 0.3s; height: 100%; text-align: center;">
-          <img src="https://scontent.fsal3-1.fna.fbcdn.net/v/t39.30808-6/656721070_122255026400180586_60514517015025414_n.jpg?stp=dst-jpg_tt6&cstp=mx1280x960&ctp=s1280x960&_nc_cat=103&ccb=1-7&_nc_sid=833d8c&_nc_ohc=FkiijV-u1ugQ7kNvwHvvC19&_nc_oc=AdrcaBl_e8JCG1I4Ep6NANJTKzOLGYDJcvSw100b3JsIBtyWrysCFAoO7wgiltPM8TwzB_HQsCU7qAfFx8uEJn_r&_nc_zt=23&_nc_ht=scontent.fsal3-1.fna&_nc_gid=0QbSF0RBm-JkqJ_sRxt8Xw&_nc_ss=7b289&oh=00_AQJP-oMvZyYtfG6ZXoBaGNHcsziOhHciu-7l_dRuXqhiuw&oe=6A9AE796" alt="Educación Parvularia" style="width: 100%; height: 180px; object-fit: cover; border-bottom: 3px solid var(--dorado-accent);">
-          <div style="padding: 1.5rem;">
-            <i class="fas fa-child" style="color: var(--dorado-accent); font-size: 2rem; margin-bottom: 0.5rem;"></i>
-            <h5 style="font-weight: 700; color: var(--azul-marino);">Educación Parvularia</h5>
-            <p style="color: #4A5568; font-size: 0.9rem;">Desde los 3 años, aprendizaje lúdico y desarrollo integral.</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- 2. Primaria / Básica -->
-      <div class="cell medium-3 small-6">
-        <div class="oferta-item" style="background: var(--blanco); border-radius: 20px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.02); border: 1px solid #edf2f7; transition: all 0.3s; height: 100%; text-align: center;">
-          <img src="https://scontent.fsal2-1.fna.fbcdn.net/v/t39.30808-6/658960024_122255193482180586_7424396291612278222_n.jpg?stp=dst-jpg_tt6&cstp=mx1280x960&ctp=s1280x960&_nc_cat=101&ccb=1-7&_nc_sid=833d8c&_nc_ohc=OmbQhBiu9JcQ7kNvwEPp9RN&_nc_oc=Adr0p2_UQul5QMngTzoZZfAxLD9BpeB3OcLTcru-Iw13-z9Eaa3qbJ-Jj3Gg8g5l833txkzMGOdhmu-jWWdXrPwy&_nc_zt=23&_nc_ht=scontent.fsal2-1.fna&_nc_gid=LJoP8Mt1jj463Snkg2h94g&_nc_ss=7b289&oh=00_AQKDVio-8V-2Yu7ztrt_NwRCmNkSdW0Y5zAqr9uyKNuhuw&oe=6A9B0057" alt="Primaria / Básica" style="width: 100%; height: 180px; object-fit: cover; border-bottom: 3px solid var(--dorado-accent);">
-          <div style="padding: 1.5rem;">
-            <i class="fas fa-book-reader" style="color: var(--dorado-accent); font-size: 2rem; margin-bottom: 0.5rem;"></i>
-            <h5 style="font-weight: 700; color: var(--azul-marino);">Primaria / Básica</h5>
-            <p style="color: #4A5568; font-size: 0.9rem;">Fortalecimiento en lectoescritura, matemáticas y valores.</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- 3. Secundaria / Bachillerato -->
-      <div class="cell medium-3 small-6">
-        <div class="oferta-item" style="background: var(--blanco); border-radius: 20px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.02); border: 1px solid #edf2f7; transition: all 0.3s; height: 100%; text-align: center;">
-          <img src="https://scontent.fsal2-1.fna.fbcdn.net/v/t39.30808-6/474564349_122190953492180586_6539142633930144908_n.jpg?stp=dst-jpg_tt6&cstp=mx2048x1538&ctp=s2048x1538&_nc_cat=107&ccb=1-7&_nc_sid=833d8c&_nc_ohc=z7pLseZclmcQ7kNvwH7esAh&_nc_oc=AdoO1TIs5DcGBPVIgewvIPw_CMGBKhEpkH63ISxBg0MsKADano6xZduylEIhhuHlCVvxZzX_qvZfAax91DJx3Qfe&_nc_zt=23&_nc_ht=scontent.fsal2-1.fna&_nc_gid=4P6byeGduRAeIAz2it3YdA&_nc_ss=7b289&oh=00_AQLpfpyPZBObNGkX1vHMyaBbIjdgVwAtiz8IW67ccT_GnA&oe=6A9AEE33" alt="Secundaria / Bachillerato" style="width: 100%; height: 180px; object-fit: cover; border-bottom: 3px solid var(--dorado-accent);">
-          <div style="padding: 1.5rem;">
-            <i class="fas fa-flask" style="color: var(--dorado-accent); font-size: 2rem; margin-bottom: 0.5rem;"></i>
-            <h5 style="font-weight: 700; color: var(--azul-marino);">Secundaria / Bachillerato</h5>
-            <p style="color: #4A5568; font-size: 0.9rem;">Preuniversitario, énfasis en ciencias y humanidades.</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- 4. Extracurriculares -->
-      <div class="cell medium-3 small-6">
-        <div class="oferta-item" style="background: var(--blanco); border-radius: 20px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.02); border: 1px solid #edf2f7; transition: all 0.3s; height: 100%; text-align: center;">
-          <img src="https://scontent.fsal11-1.fna.fbcdn.net/v/t39.30808-6/476602860_122193963200180586_5965718990510788836_n.jpg?stp=dst-jpg_tt6&cstp=mx1600x1200&ctp=s1600x1200&_nc_cat=108&ccb=1-7&_nc_sid=833d8c&_nc_ohc=pwOutZ1Xx80Q7kNvwGr63j_&_nc_oc=AdqkZ_ilyBvoXiKK8Nmts_mg4GbuzorMgitQTdibuj95qBjN3eJUg4CRJtj6Q0QCVGN_wFE5oTRDQ4WxtGkJGJ4d&_nc_zt=23&_nc_ht=scontent.fsal11-1.fna&_nc_gid=WafNNpiWdWLUsMkcl1vbiQ&_nc_ss=7b289&oh=00_AQLTTXNlE3J7G0i5iu_IuZT88fpdwlDKhMgxypGxOXJ-Ww&oe=6A9AED5A" alt="Extracurriculares" style="width: 100%; height: 180px; object-fit: cover; border-bottom: 3px solid var(--dorado-accent);">
-          <div style="padding: 1.5rem;">
-            <i class="fas fa-futbol" style="color: var(--dorado-accent); font-size: 2rem; margin-bottom: 0.5rem;"></i>
-            <h5 style="font-weight: 700; color: var(--azul-marino);">Extracurriculares</h5>
-            <p style="color: #4A5568; font-size: 0.9rem;">Deportes, arte, música y más.</p>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-<!-- ===== PERSONAL DEL COMPLEJO EDUCATIVO ===== -->
-<section id="personal" style="padding: 4rem 0; background: var(--gris-claro);">
-  <div class="grid-container">
-
-    <div class="grid-x grid-margin-x align-center">
-      <div class="cell text-center mb-3">
-        <p style="color: var(--dorado-accent); font-weight: 700; text-transform: uppercase; letter-spacing: 3px; font-size: 0.85rem;">
-          <i class="fas fa-users"></i> Conoce a nuestro equipo
-        </p>
-        <h2>Personal del Complejo Educativo</h2>
-        <p class="lead" style="color: #4A5568;">
-          Docentes y personal administrativo que forman parte de nuestra institución.
-        </p>
-      </div>
-    </div>
-
-    <!-- ===== DIRECCIÓN Y ADMINISTRACIÓN ===== -->
-    <div class="cell text-center mb-2">
-      <h3 class="border-dorado">Dirección y Administración</h3>
-    </div>
-
-    <div class="grid-x grid-margin-x">
-
-      <div class="cell medium-4 small-6">
-        <div class="contact-card">
-          <i class="fas fa-user-tie dorado"></i>
-          <h5>Beatriz Karina Gómez</h5>
-          <p>Directora</p>
-        </div>
-      </div>
-
-      <div class="cell medium-4 small-6">
-        <div class="contact-card">
-          <i class="fas fa-user-tie azul"></i>
-          <h5>Sandra Rodriguez</h5>
-          <p>Subdirectora de la mañana</p>
-        </div>
-      </div>
-
-      <div class="cell medium-4 small-6">
-        <div class="contact-card">
-          <i class="fas fa-user-tie dorado"></i>
-          <h5>Gladis Beltrán</h5>
-          <p>Subdirectora de la tarde</p>
-        </div>
-      </div>
-
-      <div class="cell medium-4 small-6">
-        <div class="contact-card">
-          <i class="fas fa-user azul"></i>
-          <h5>Miriam López</h5>
-          <p>Secretaria</p>
-        </div>
-      </div>
-
-      <div class="cell medium-4 small-6">
-        <div class="contact-card">
-          <i class="fas fa-broom dorado"></i>
-          <h5>Julia Asencio</h5>
-          <p>Área de limpieza</p>
-        </div>
-      </div>
-
-    </div>
-
-    <!-- ===== EDUCACIÓN PARVULARIA ===== -->
-    <div class="cell text-center mb-2 mt-3">
-      <h3 class="border-dorado">Educación Parvularia</h3>
-    </div>
-
-    <div class="grid-x grid-margin-x">
-
-      <div class="cell medium-3 small-6">
-        <div class="contact-card">
-          <i class="fas fa-child dorado"></i>
-          <h5>Morena Ascencio</h5>
-          <p>Docente de Parvularia</p>
-        </div>
-      </div>
-
-      <div class="cell medium-3 small-6">
-        <div class="contact-card">
-          <i class="fas fa-child azul"></i>
-          <h5>Ana Lainez</h5>
-          <p>Docente de Parvularia</p>
-        </div>
-      </div>
-
-      <div class="cell medium-3 small-6">
-        <div class="contact-card">
-          <i class="fas fa-child dorado"></i>
-          <h5>Maria Leiva</h5>
-          <p>Docente de Parvularia</p>
-        </div>
-      </div>
-
-      <div class="cell medium-3 small-6">
-        <div class="contact-card">
-          <i class="fas fa-child azul"></i>
-          <h5>Antolina Ramírez</h5>
-          <p>Docente de Parvularia</p>
-        </div>
-      </div>
-
-      <div class="cell medium-3 small-6">
-        <div class="contact-card">
-          <i class="fas fa-child dorado"></i>
-          <h5>Marcos Lainez</h5>
-          <p>Docente de Parvularia</p>
-        </div>
-      </div>
-
-    </div>
-
-    <!-- ===== PRIMER CICLO ===== -->
-    <div class="cell text-center mb-2 mt-3">
-      <h3 class="border-dorado">Primer Ciclo</h3>
-    </div>
-
-    <div class="grid-x grid-margin-x">
-
-      <div class="cell medium-3 small-6">
-        <div class="contact-card">
-          <i class="fas fa-chalkboard-teacher azul"></i>
-          <h5>Magdalena Hernández</h5>
-          <p>Docente de Primer Ciclo</p>
-        </div>
-      </div>
-
-      <div class="cell medium-3 small-6">
-        <div class="contact-card">
-          <i class="fas fa-chalkboard-teacher dorado"></i>
-          <h5>Gladis Hernández</h5>
-          <p>Docente de Primer Ciclo</p>
-        </div>
-      </div>
-
-      <div class="cell medium-3 small-6">
-        <div class="contact-card">
-          <i class="fas fa-chalkboard-teacher azul"></i>
-          <h5>Vilma Hernández</h5>
-          <p>Docente de Primer Ciclo</p>
-        </div>
-      </div>
-
-      <div class="cell medium-3 small-6">
-        <div class="contact-card">
-          <i class="fas fa-chalkboard-teacher dorado"></i>
-          <h5>Rosita Torres</h5>
-          <p>Docente de Primer Ciclo</p>
-        </div>
-      </div>
-
-    </div>
-
-    <!-- ===== SEGUNDO CICLO ===== -->
-    <div class="cell text-center mb-2 mt-3">
-      <h3 class="border-dorado">Segundo Ciclo</h3>
-    </div>
-
-    <div class="grid-x grid-margin-x">
-
-      <div class="cell medium-3 small-6">
-        <div class="contact-card">
-          <i class="fas fa-chalkboard-teacher dorado"></i>
-          <h5>María Resinos</h5>
-          <p>Docente de Segundo Ciclo</p>
-        </div>
-      </div>
-
-      <div class="cell medium-3 small-6">
-        <div class="contact-card">
-          <i class="fas fa-chalkboard-teacher azul"></i>
-          <h5>Seleni Aviles</h5>
-          <p>Docente de Segundo Ciclo</p>
-        </div>
-      </div>
-
-      <div class="cell medium-3 small-6">
-        <div class="contact-card">
-          <i class="fas fa-chalkboard-teacher dorado"></i>
-          <h5>Cristina Del cid</h5>
-          <p>Docente de Segundo Ciclo</p>
-        </div>
-      </div>
-
-      <div class="cell medium-3 small-6">
-        <div class="contact-card">
-          <i class="fas fa-chalkboard-teacher azul"></i>
-          <h5>Marina López</h5>
-          <p>Docente de Segundo Ciclo</p>
-        </div>
-      </div>
-
-    </div>
-
-    <!-- ===== TERCER CICLO ===== -->
-    <div class="cell text-center mb-2 mt-3">
-      <h3 class="border-dorado">Tercer Ciclo</h3>
-    </div>
-
-    <div class="grid-x grid-margin-x">
-
-      <div class="cell medium-3 small-6">
-        <div class="contact-card">
-          <i class="fas fa-chalkboard-teacher azul"></i>
-          <h5>Hilda Recinos</h5>
-          <p>Docente de Tercer Ciclo</p>
-        </div>
-      </div>
-
-      <div class="cell medium-3 small-6">
-        <div class="contact-card">
-          <i class="fas fa-chalkboard-teacher dorado"></i>
-          <h5>Antonio Beltrán</h5>
-          <p>Docente de Tercer Ciclo</p>
-        </div>
-      </div>
-
-      <div class="cell medium-3 small-6">
-        <div class="contact-card">
-          <i class="fas fa-chalkboard-teacher azul"></i>
-          <h5>Antonio Hernández</h5>
-          <p>Docente de Tercer Ciclo</p>
-        </div>
-      </div>
-
-      <div class="cell medium-3 small-6">
-        <div class="contact-card">
-          <i class="fas fa-chalkboard-teacher dorado"></i>
-          <h5>Jenny Torres</h5>
-          <p>Docente de Tercer Ciclo</p>
-        </div>
-      </div>
-
-      <div class="cell medium-3 small-6">
-        <div class="contact-card">
-          <i class="fas fa-chalkboard-teacher azul"></i>
-          <h5>Alicia Lainez</h5>
-          <p>Docente de Tercer Ciclo</p>
-        </div>
-      </div>
-
-    </div>
-
-    <!-- ===== EDUCACIÓN MEDIA ===== -->
-    <div class="cell text-center mb-2 mt-3">
-      <h3 class="border-dorado">Educación Media</h3>
-    </div>
-
-    <div class="grid-x grid-margin-x">
-
-      <div class="cell medium-3 small-6">
-        <div class="contact-card">
-          <i class="fas fa-chalkboard-teacher dorado"></i>
-          <h5>Isidra Villalobos</h5>
-          <p>Docente de Educación Media</p>
-        </div>
-      </div>
-
-      <div class="cell medium-3 small-6">
-        <div class="contact-card">
-          <i class="fas fa-chalkboard-teacher azul"></i>
-          <h5>Ramón Alfaro</h5>
-          <p>Docente de Educación Media</p>
-        </div>
-      </div>
-
-      <div class="cell medium-3 small-6">
-        <div class="contact-card">
-          <i class="fas fa-chalkboard-teacher dorado"></i>
-          <h5>Leonardo Rivas</h5>
-          <p>Docente de Educación Media</p>
-        </div>
-      </div>
-
-      <div class="cell medium-3 small-6">
-        <div class="contact-card">
-          <i class="fas fa-chalkboard-teacher azul"></i>
-          <h5>Enrique Rivas</h5>
-          <p>Docente de Educación Media</p>
-        </div>
-      </div>
-
-      <div class="cell medium-3 small-6">
-        <div class="contact-card">
-          <i class="fas fa-chalkboard-teacher dorado"></i>
-          <h5>William Alejo</h5>
-          <p>Docente de Educación Media</p>
-        </div>
-      </div>
-
-      <div class="cell medium-3 small-6">
-        <div class="contact-card">
-          <i class="fas fa-chalkboard-teacher azul"></i>
-          <h5>Carlos Ayala</h5>
-          <p>Docente de Educación Media</p>
-        </div>
-      </div>
-
-    </div>
-
-    <!-- ===== EDUCACIÓN FÍSICA ===== -->
-    <div class="cell text-center mb-2 mt-3">
-      <h3 class="border-dorado">Educación Física</h3>
-    </div>
-
-    <div class="grid-x grid-margin-x align-center">
-
-      <div class="cell medium-4 small-6">
-        <div class="contact-card">
-          <i class="fas fa-running dorado"></i>
-          <h5>Morena</h5>
-          <p>Docente de Educación Física</p>
-        </div>
-      </div>
-
-    </div>
-
-  </div>
-</section>
-  <!-- ===== ADMISIONES ===== -->
-  <section id="admisiones" class="seccion-admisiones">
+  <section id="oferta" class="seccion bg-blanco">
     <div class="grid-container">
-      <div class="grid-x grid-margin-x align-center">
-        <div class="cell text-center mb-3">
-          <p class="subtitle"><i class="fas fa-pencil-alt"></i> Inscripciones 2026</p>
-          <h2>¡Forma parte de nuestra<br>comunidad educativa!</h2>
+      <div class="seccion-titulo">
+        <p class="etiqueta" style="color:var(--dorado-accent);"><i class="fas fa-book"></i> Oferta académica</p>
+        <h2>Programas educativos para cada etapa</h2>
+      </div>
+      <div class="grid-x grid-margin-x">
+        <div class="cell medium-3 small-6" id="parvularia">
+          <div style="background:var(--gris-claro);border-radius:20px;padding:1.5rem;text-align:center;border-bottom:4px solid var(--dorado-accent);height:100%;">
+            <!-- ============================================================
+                 IMAGEN 5: PARVULARIA
+                 Cambia la URL por la de tu imagen
+                 ============================================================ -->
+            <div class="espacio-imagen imagen-con-fondo" style="min-height:120px;margin-bottom:0.8rem; background-image: url('https://scontent.fsal5-1.fna.fbcdn.net/v/t39.30808-6/656721070_122255026400180586_60514517015025414_n.jpg?stp=dst-jpg_tt6&cstp=mx1280x960&ctp=s1280x960&_nc_cat=103&ccb=1-7&_nc_sid=833d8c&_nc_ohc=FitgyiPMfb8Q7kNvwED1vMn&_nc_oc=AdpTjGEunqNt9N5AwLDCksL0SgB4t1DEI3zBG3nGaCAkQt5fcn5xGVhRp_4lXw_gOys&_nc_zt=23&_nc_ht=scontent.fsal5-1.fna&_nc_gid=lzQOZ0ECtgU60G3PVEOYKw&_nc_ss=7b289&oh=00_AQKljoXTn3vloJh0qRfIaae1B3CKtZm7QcBR2TsU8PiHbQ&oe=6A9FF556');">
+            </div>
+            <i class="fas fa-child" style="font-size:2.5rem;color:var(--dorado-accent);display:block;margin-bottom:0.3rem;"></i>
+            <h5>Parvularia</h5>
+            <p>3-5 años</p>
+          </div>
+        </div>
+        <div class="cell medium-3 small-6" id="primaria">
+          <div style="background:var(--gris-claro);border-radius:20px;padding:1.5rem;text-align:center;border-bottom:4px solid var(--azul-institucional);height:100%;">
+            <!-- ============================================================
+                 IMAGEN 6: PRIMARIA
+                 Cambia la URL por la de tu imagen
+                 ============================================================ -->
+            <div class="espacio-imagen imagen-con-fondo" style="min-height:120px;margin-bottom:0.8rem; background-image: url('https://scontent.fsal1-1.fna.fbcdn.net/v/t39.30808-6/658960024_122255193482180586_7424396291612278222_n.jpg?stp=dst-jpg_tt6&cstp=mx1280x960&ctp=s1280x960&_nc_cat=101&ccb=1-7&_nc_sid=833d8c&_nc_ohc=cfwxDGIdYvAQ7kNvwH597Ju&_nc_oc=AdoQj8sjaRjDqLfZgLRT6e0WpriKETb31IN0htjY9vsddZyYUi34KwhrRFM12Ai4DfU&_nc_zt=23&_nc_ht=scontent.fsal1-1.fna&_nc_gid=7dzn9y_hlJUei3hvLZBdKg&_nc_ss=7b289&oh=00_AQJJUoDKSSYqKKDqT_2DC4MJNQl6-FUqJSMyLPn0EWc0ng&oe=6AA00E17');">
+            </div>
+            <i class="fas fa-book-reader" style="font-size:2.5rem;color:var(--azul-institucional);display:block;margin-bottom:0.3rem;"></i>
+            <h5>Primaria</h5>
+            <p>6-12 años</p>
+          </div>
+        </div>
+        <div class="cell medium-3 small-6" id="secundaria">
+          <div style="background:var(--gris-claro);border-radius:20px;padding:1.5rem;text-align:center;border-bottom:4px solid var(--dorado-accent);height:100%;">
+            <!-- ============================================================
+                 IMAGEN 7: SECUNDARIA
+                 Cambia la URL por la de tu imagen
+                 ============================================================ -->
+            <div class="espacio-imagen imagen-con-fondo" style="min-height:120px;margin-bottom:0.8rem; background-image: url('https://scontent.fsal1-1.fna.fbcdn.net/v/t39.30808-6/474564349_122190953492180586_6539142633930144908_n.jpg?stp=dst-jpg_tt6&cstp=mx2048x1538&ctp=s2048x1538&_nc_cat=107&ccb=1-7&_nc_sid=833d8c&_nc_ohc=IOLyxPVMKlUQ7kNvwFSCxfF&_nc_oc=AdqWagBBHhkACCTBgOWAVdOPskNcjihV25IPYwc9WDaZQoYIkSLNkELS36e2_mby8Ag&_nc_zt=23&_nc_ht=scontent.fsal1-1.fna&_nc_gid=hltNVqv7DGHgLPLQ9I0Jow&_nc_ss=7b289&oh=00_AQIpbQs13_smQKGvCOZz_rYdDjKQMiDk2anhpOntNW008g&oe=6A9FFBF3');">
+            </div>
+            <i class="fas fa-flask" style="font-size:2.5rem;color:var(--dorado-accent);display:block;margin-bottom:0.3rem;"></i>
+            <h5>Secundaria</h5>
+            <p>13-17 años</p>
+          </div>
+        </div>
+        <div class="cell medium-3 small-6" id="extracurriculares">
+          <div style="background:var(--gris-claro);border-radius:20px;padding:1.5rem;text-align:center;border-bottom:4px solid var(--azul-institucional);height:100%;">
+            <!-- ============================================================
+                 IMAGEN 8: EXTRACURRICULARES
+                 Cambia la URL por la de tu imagen
+                 ============================================================ -->
+            <div class="espacio-imagen imagen-con-fondo" style="min-height:120px;margin-bottom:0.8rem; background-image: url('https://scontent.fsal5-1.fna.fbcdn.net/v/t39.30808-6/476602860_122193963200180586_5965718990510788836_n.jpg?stp=dst-jpg_tt6&cstp=mx1600x1200&ctp=s1600x1200&_nc_cat=108&ccb=1-7&_nc_sid=833d8c&_nc_ohc=AMEKS3z0P-0Q7kNvwHWA-Ga&_nc_oc=AdovXDpSghI7ltOPfqnKlGJhXtDGn8SgOxqn4t5xtsaMctUv9oxg1oAXlrnHp08zwBI&_nc_zt=23&_nc_ht=scontent.fsal5-1.fna&_nc_gid=8Nctb3pqOlNa57smsCvjNg&_nc_ss=7b289&oh=00_AQJRfXcl0P3Z1uwEzHt2CuyelEF6Snkc1wmT08_63OfUQA&oe=6A9FFB1A');">
+            </div>
+            <i class="fas fa-futbol" style="font-size:2.5rem;color:var(--azul-institucional);display:block;margin-bottom:0.3rem;"></i>
+            <h5>Extracurriculares</h5>
+            <p>Deportes y arte</p>
+          </div>
         </div>
       </div>
+    </div>
+  </section>
 
+  <!-- ===== ADMISIONES ===== -->
+  <section id="admisiones" class="seccion bg-azul-marino">
+    <div class="grid-container">
+      <div class="seccion-titulo">
+        <p class="etiqueta" style="color: var(--dorado-accent);"><i class="fas fa-pencil-alt"></i> Inscripciones 2026</p>
+        <h2 style="color: var(--blanco);">¡Forma parte de nuestra comunidad educativa!</h2>
+      </div>
       <div class="grid-x grid-margin-x align-center">
-        <div class="cell medium-6">
+        <div class="cell medium-6" id="formulario">
           <div style="background: var(--blanco); padding: 2.5rem; border-radius: 30px; box-shadow: 0 30px 60px rgba(0,0,0,0.2); border: 3px solid var(--dorado-accent);">
-            <h4 style="font-weight: 800; margin-bottom: 1.5rem; color: var(--azul-marino);">
-              <i class="fas fa-pencil-alt" style="color: var(--dorado-accent);"></i> Formulario de inscripción
-            </h4>
+            <h4 style="font-weight: 800; margin-bottom: 1.5rem; color: var(--azul-marino);"><i class="fas fa-pencil-alt" style="color: var(--dorado-accent);"></i> Formulario de inscripción</h4>
             <form class="formulario-inscripcion">
-              <label>Nombre completo</label>
-              <input type="text" placeholder="Ej: Ana María Pérez">
-
-              <label>Correo electrónico</label>
-              <input type="email" placeholder="ana@email.com">
-
-              <label>Teléfono</label>
-              <input type="tel" placeholder="300 123 4567">
-
+              <label>Nombre completo</label><input type="text" placeholder="Ej: Ana María Pérez">
+              <label>Correo electrónico</label><input type="email" placeholder="ana@email.com">
+              <label>Teléfono</label><input type="tel" placeholder="300 123 4567">
               <label>Grado de interés</label>
-              <select>
-                <option>Parvularia (3-5 años)</option>
-                <option>Primaria (6-10 años)</option>
-                <option>Secundaria (11-17 años)</option>
-              </select>
-
-              <label>Mensaje adicional</label>
-              <textarea rows="3" placeholder="¿Algo que quieras contarnos?"></textarea>
-
+              <select><option>Parvularia (3-5 años)</option><option>Primaria (6-12 años)</option><option>Secundaria (13-17 años)</option><option>Media (Bachillerato)</option></select>
+              <label>Mensaje adicional</label><textarea rows="3" placeholder="¿Algo que quieras contarnos?"></textarea>
               <button type="submit" class="btn-dorado" style="width: 100%;"><i class="fas fa-paper-plane"></i> Enviar solicitud</button>
             </form>
           </div>
         </div>
         <div class="cell medium-5 medium-offset-1">
-          <h4 style="color: var(--blanco); font-weight: 800; margin-bottom: 1.5rem;">
-            <i class="fas fa-clipboard-list" style="color: var(--dorado-accent);"></i> Proceso de admisión
-          </h4>
+          <h4 style="color: var(--blanco); font-weight: 800; margin-bottom: 1.5rem;"><i class="fas fa-clipboard-list" style="color: var(--dorado-accent);"></i> Proceso de admisión</h4>
           <ul class="process-list">
             <li><span class="step-number">1</span> Diligenciar formulario de inscripción</li>
             <li><span class="step-number">2</span> Entrevista con psicorientación</li>
@@ -2462,135 +1384,62 @@
     </div>
   </section>
 
-  <!-- ===== UBICACIÓN CON GOOGLE MAPS ===== -->
-  <section id="ubicacion" class="seccion-ubicacion">
+  <!-- ===== DOCENTES ===== -->
+  <section id="docentes" class="seccion bg-blanco">
     <div class="grid-container">
-      <div class="grid-x grid-margin-x align-center">
-        <div class="cell text-center mb-3">
-          <p style="color: var(--azul-institucional); font-weight: 700; text-transform: uppercase; letter-spacing: 3px; font-size: 0.85rem;">
-            <i class="fas fa-map-pin" style="color: var(--dorado-accent);"></i> Encuéntranos
-          </p>
-          <h2>Nuestra Ubicación</h2>
-          <p class="lead" style="color: #4A5568;">Te esperamos en nuestras instalaciones</p>
-        </div>
+      <div class="seccion-titulo">
+        <p class="etiqueta">Conoce a nuestro equipo</p>
+        <h2>Personal del Complejo Educativo</h2>
       </div>
+      <div class="grid-x grid-margin-x">
+        <div class="cell medium-3 small-6"><div style="background:var(--gris-claro);padding:1rem;border-radius:15px;text-align:center;"><i class="fas fa-user-tie" style="font-size:2rem;color:var(--dorado-accent);"></i><h5>Beatriz Karina Gómez</h5><p>Directora</p></div></div>
+        <div class="cell medium-3 small-6"><div style="background:var(--gris-claro);padding:1rem;border-radius:15px;text-align:center;"><i class="fas fa-user-tie" style="font-size:2rem;color:var(--azul-institucional);"></i><h5>Sandra Rodriguez</h5><p>Subdirectora</p></div></div>
+        <div class="cell medium-3 small-6"><div style="background:var(--gris-claro);padding:1rem;border-radius:15px;text-align:center;"><i class="fas fa-user-tie" style="font-size:2rem;color:var(--dorado-accent);"></i><h5>Gladis Beltrán</h5><p>Subdirectora</p></div></div>
+        <div class="cell medium-3 small-6"><div style="background:var(--gris-claro);padding:1rem;border-radius:15px;text-align:center;"><i class="fas fa-user" style="font-size:2rem;color:var(--azul-institucional);"></i><h5>Miriam López</h5><p>Secretaria</p></div></div>
+      </div>
+    </div>
+  </section>
 
+  <!-- ===== UBICACIÓN ===== -->
+  <section id="ubicacion" class="seccion bg-gris">
+    <div class="grid-container">
+      <div class="seccion-titulo">
+        <p class="etiqueta" style="color: var(--azul-institucional);"><i class="fas fa-map-pin" style="color: var(--dorado-accent);"></i> Encuéntranos</p>
+        <h2>Nuestra Ubicación</h2>
+      </div>
       <div class="grid-x grid-margin-x align-center">
-        <!-- GOOGLE MAPS -->
         <div class="cell medium-8">
-          <div class="mapa-container">
-            <iframe 
-              src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d2502.9397971858302!2d-88.6753994479126!3d13.953400620701943!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMTPCsDU3JzEyLjAiTiA4OMKwNDAnMjUuNSJX!5e0!3m2!1ses-419!2ssv!4v1787347075267!5m2!1ses-419!2ssv" 
-              width="600" 
-              height="450" 
-              style="border:0;" 
-              allowfullscreen="" 
-              loading="lazy" 
-              referrerpolicy="strict-origin-when-cross-origin">
-            </iframe>
+          <div style="border-radius:25px;overflow:hidden;box-shadow:0 20px 60px rgba(26,54,93,0.1);border:4px solid var(--dorado-accent);height:450px;">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d2502.9397971858302!2d-88.6753994479126!3d13.953400620701943!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMTPCsDU3JzEyLjAiTiA4OMKwNDAnMjUuNSJX!5e0!3m2!1ses-419!2ssv!4v1787347075267!5m2!1ses-419!2ssv" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
           </div>
         </div>
-
-        <!-- INFORMACIÓN DE UBICACIÓN -->
         <div class="cell medium-4">
-          <div class="ubicacion-info">
-            <div style="display: flex; align-items: flex-start; margin-bottom: 1.5rem;">
-              <i class="fas fa-map-marker-alt"></i>
-              <div>
-                <h4>Dirección</h4>
-                <p>Coordenadas:<br>13°57'12.0"N 88°40'25.5"W</p>
-                <p style="font-size: 0.85rem; color: var(--azul-institucional);">
-                  <i class="fas fa-info-circle"></i> El Salvador
-                </p>
-              </div>
-            </div>
-
-            <div style="display: flex; align-items: flex-start; margin-bottom: 1.5rem;">
-              <i class="fas fa-phone-alt"></i>
-              <div>
-                <h4>Teléfono</h4>
-                <p>+503 7851 5659</p>
-              </div>
-            </div>
-
-            <div style="display: flex; align-items: flex-start; margin-bottom: 1.5rem;">
-              <i class="fas fa-envelope"></i>
-              <div>
-                <h4>Email</h4>
-                <p>info@clases.edu.sv</p>
-              </div>
-            </div>
-
-            <div class="horario">
-              <h4 style="margin-bottom: 0.5rem;"><i class="fas fa-clock" style="color: var(--dorado-accent);"></i> Horario de atención</h4>
-              <p><strong>Lunes a Viernes:</strong> 7:00 AM - 6:00 PM</p>
-              <p><strong>Sábados:</strong> 8:00 AM - 12:00 PM</p>
-            </div>
+          <div style="background:var(--blanco);padding:2rem;border-radius:20px;border-left:5px solid var(--dorado-accent);">
+            <p><i class="fas fa-map-marker-alt" style="color:var(--dorado-accent);width:25px;"></i> <strong>Dirección:</strong> El Salvador</p>
+            <p><i class="fas fa-phone-alt" style="color:var(--dorado-accent);width:25px;"></i> <strong>Teléfono:</strong> +503 7851 5659</p>
+            <p><i class="fas fa-envelope" style="color:var(--dorado-accent);width:25px;"></i> <strong>Email:</strong> info@clases.edu.sv</p>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ===== CONTACTO ===== -->
-  <section id="contacto" class="seccion-contacto">
+  <!-- ===== SOPORTE ===== -->
+  <section id="soporte" class="seccion bg-blanco">
     <div class="grid-container">
-      <div class="grid-x grid-margin-x align-center">
-        <div class="cell text-center mb-3">
-          <p style="color: var(--azul-institucional); font-weight: 700; text-transform: uppercase; letter-spacing: 3px; font-size: 0.85rem;">
-            <i class="fas fa-phone-alt" style="color: var(--dorado-accent);"></i> Contáctanos
-          </p>
-          <h2>Estamos aquí para<br>ayudarte</h2>
-        </div>
+      <div class="seccion-titulo">
+        <p class="etiqueta" style="color: var(--azul-institucional);"><i class="fas fa-headset" style="color: var(--dorado-accent);"></i> ¿Necesitas ayuda?</p>
+        <h2>Formulario de Soporte</h2>
       </div>
-
       <div class="grid-x grid-margin-x align-center">
-        <div class="cell medium-4">
-          <div class="contact-card">
-            <i class="fas fa-map-marker-alt azul"></i>
-            <h5>Dirección</h5>
-            <p>El Salvador<br>13°57'12.0"N 88°40'25.5"W</p>
-          </div>
-        </div>
-        <div class="cell medium-4">
-          <div class="contact-card">
-            <i class="fas fa-phone-alt dorado"></i>
-            <h5>Teléfono</h5>
-            <p>+503 7851 5659</p>
-          </div>
-        </div>
-        <div class="cell medium-4">
-          <div class="contact-card">
-            <i class="fas fa-envelope azul"></i>
-            <h5>Email</h5>
-            <p>info@clases.edu.sv<br>admisiones@clases.edu.sv</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="grid-x grid-margin-x align-center" style="margin-top: 3rem;">
         <div class="cell medium-8">
-          <div style="background: var(--blanco); padding: 2.5rem; border-radius: 30px; border: 3px solid var(--dorado-accent); box-shadow: 0 8px 30px rgba(26, 54, 93, 0.04);">
-            <h4 style="font-weight: 800; margin-bottom: 1.5rem; color: var(--azul-marino);">
-              <i class="fas fa-headset" style="color: var(--azul-institucional);"></i> Envíanos un mensaje
-            </h4>
+          <div style="background:var(--gris-claro);padding:2.5rem;border-radius:30px;border:3px solid var(--dorado-accent);">
             <form>
               <div class="grid-x grid-margin-x">
-                <div class="cell medium-6">
-                  <label style="font-weight: 600; color: var(--azul-marino);">Nombre</label>
-                  <input type="text" placeholder="Tu nombre" style="border-radius: 30px; border: 2px solid #e2e8f0; padding: 0.8rem 1.5rem; width: 100%;">
-                </div>
-                <div class="cell medium-6">
-                  <label style="font-weight: 600; color: var(--azul-marino);">Email</label>
-                  <input type="email" placeholder="tu@email.com" style="border-radius: 30px; border: 2px solid #e2e8f0; padding: 0.8rem 1.5rem; width: 100%;">
-                </div>
-                <div class="cell medium-12">
-                  <label style="font-weight: 600; color: var(--azul-marino);">Mensaje</label>
-                  <textarea rows="4" placeholder="Escribe tu consulta..." style="border-radius: 30px; border: 2px solid #e2e8f0; padding: 0.8rem 1.5rem; width: 100%;"></textarea>
-                </div>
-                <div class="cell medium-12">
-                  <button type="submit" class="btn-azul" style="width: 100%;"><i class="fas fa-paper-plane"></i> Enviar mensaje</button>
-                </div>
+                <div class="cell medium-6"><label>Nombre</label><input type="text" placeholder="Tu nombre" style="border-radius:30px;border:2px solid #e2e8f0;padding:0.8rem 1.5rem;width:100%;"></div>
+                <div class="cell medium-6"><label>Email</label><input type="email" placeholder="tu@email.com" style="border-radius:30px;border:2px solid #e2e8f0;padding:0.8rem 1.5rem;width:100%;"></div>
+                <div class="cell medium-12"><label>Mensaje</label><textarea rows="4" placeholder="Escribe tu consulta..." style="border-radius:30px;border:2px solid #e2e8f0;padding:0.8rem 1.5rem;width:100%;"></textarea></div>
+                <div class="cell medium-12"><button type="submit" class="btn-azul" style="width:100%;"><i class="fas fa-paper-plane"></i> Enviar mensaje</button></div>
               </div>
             </form>
           </div>
@@ -2604,43 +1453,36 @@
     <div class="grid-container">
       <div class="grid-x grid-margin-x">
         <div class="cell medium-4">
-          <h5><i class="fas fa-graduation-cap" style="color: var(--dorado-accent);"></i> <span> C.E. "10 de Oct. 1987" </span> Web</h5>
-          <p style="font-size: 0.95rem; line-height: 1.8;">Formando líderes del futuro con innovación y calidez humana.</p>
-          <div class="social-icons" style="margin-top: 1.5rem;">
-            <a href="https://www.facebook.com/share/1duD4p4Aji/"><i class="fab fa-facebook-f"></i></a>
-          
-
+          <h5><i class="fas fa-graduation-cap" style="color:var(--dorado-accent);"></i> <span>Complejo</span> Educativo</h5>
+          <p>"10 DE OCTUBRE 1987"</p>
+          <div class="social-icons" style="margin-top:1.5rem;">
+            <a href="https://www.facebook.com/share/17WsJJbqSJ/"><i class="fab fa-facebook-f"></i></a>
           </div>
         </div>
         <div class="cell medium-2">
           <h5>Enlaces</h5>
           <ul>
-            <li><a href="#inicio"><i class="fas fa-chevron-right" style="font-size: 0.6rem; color: var(--dorado-accent);"></i> Inicio</a></li>
-            <li><a href="#nosotros"><i class="fas fa-chevron-right" style="font-size: 0.6rem; color: var(--dorado-accent);"></i> Nosotros</a></li>
-            <li><a href="#oferta"><i class="fas fa-chevron-right" style="font-size: 0.6rem; color: var(--dorado-accent);"></i> Oferta</a></li>
-            <li><a href="#admisiones"><i class="fas fa-chevron-right" style="font-size: 0.6rem; color: var(--dorado-accent);"></i> Admisiones</a></li>
+            <li><a href="#inicio">Inicio</a></li>
+            <li><a href="#historia">Nosotros</a></li>
+            <li><a href="#oferta">Oferta</a></li>
+            <li><a href="#formulario">Admisiones</a></li>
           </ul>
         </div>
         <div class="cell medium-3">
           <h5>Contacto</h5>
           <ul>
-            <li><i class="fas fa-map-marker-alt" style="color: var(--dorado-accent); width: 20px;"></i> El Salvador</li>
-            <li><i class="fas fa-phone" style="color: var(--dorado-accent); width: 20px;"></i> +503 7851 5659</li>
-            <li><i class="fas fa-envelope" style="color: var(--dorado-accent); width: 20px;"></i> info@clases.edu.sv</li>
+            <li><i class="fas fa-map-marker-alt" style="color:var(--dorado-accent);width:20px;"></i> El Salvador</li>
+            <li><i class="fas fa-phone" style="color:var(--dorado-accent);width:20px;"></i> +503 7851 5659</li>
+            <li><i class="fas fa-envelope" style="color:var(--dorado-accent);width:20px;"></i> info@clases.edu.sv</li>
           </ul>
         </div>
         <div class="cell medium-3">
           <h5>Horario</h5>
           <ul>
-            <li><strong style="color: var(--dorado-accent);">Lunes a Viernes:</strong></li>
+            <li><strong>Lunes a Viernes:</strong></li>
             <li>7:00 AM - 6:00 PM</li>
-            <li style="margin-top: 0.5rem;"><strong style="color: var(--dorado-accent);">Sábados:</strong></li>
-            <li>8:00 AM - 12:00 PM</li>
           </ul>
         </div>
-      </div>
-      <div style="border-top: 1px solid rgba(255,255,255,0.06); margin-top: 2rem; padding-top: 1.5rem; text-align: center; font-size: 0.85rem; opacity: 0.7;">
-        © 2026 CO.ED.10.OCT.1987.Web · Todos los derechos reservados
       </div>
     </div>
   </footer>
@@ -2652,5 +1494,64 @@
       Foundation.initializePlugins(document);
     });
   </script>
+  
+<script>
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    const botones = document.querySelectorAll(".boton-menu");
+
+    botones.forEach(function (boton) {
+
+        boton.addEventListener("click", function (evento) {
+
+            evento.stopPropagation();
+
+            const menu = boton.parentElement;
+
+            // Cerrar los otros submenús
+            document.querySelectorAll(".tiene-submenu").forEach(function (otroMenu) {
+
+                if (otroMenu !== menu) {
+                    otroMenu.classList.remove("menu-abierto");
+                }
+
+            });
+
+            // Abrir o cerrar el menú seleccionado
+            menu.classList.toggle("menu-abierto");
+
+        });
+
+    });
+
+
+    // Cerrar los submenús al hacer clic fuera
+    document.addEventListener("click", function () {
+
+        document.querySelectorAll(".tiene-submenu").forEach(function (menu) {
+            menu.classList.remove("menu-abierto");
+        });
+
+    });
+
+
+    // Cerrar después de seleccionar una opción
+    document.querySelectorAll(".submenu-oculto a").forEach(function (enlace) {
+
+        enlace.addEventListener("click", function () {
+
+            document.querySelectorAll(".tiene-submenu").forEach(function (menu) {
+                menu.classList.remove("menu-abierto");
+            });
+
+        });
+
+    });
+
+});
+
+</script>
+
 </body>
 </html>
